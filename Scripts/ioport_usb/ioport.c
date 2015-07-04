@@ -22,35 +22,6 @@
 
 /* LOCAL VARIABLES DECLARATIONS */
 
-inline unsigned long STR_TO_U8(const char *cp)
-{
-	int result = 0,value;
-	int offset = 4;
-	unsigned int base;
-
-	if (*cp == '0') {
-		cp++;
-		if ((*cp == 'x') && isxdigit(cp[1])) {
-			base = 16;
-			cp++;
-		}
-		if (!base) {
-			base = 8;
-		}
-	}
-	if (!base) {
-		base = 10;
-	}
-	while (isxdigit(*cp) && (value = isdigit(*cp) ? *cp-'0' : (islower(*cp)
-	    ? toupper(*cp) : *cp)-'A'+10) < base) {
-		result = result + (value << offset);
-		cp++;
-		offset = offset - 4;
-	}
-
-	return result;
-}
-
 int doInb(int argc, char *argv[]);
 int doVinb(int argc, char *argv[]);
 int doOutb(int argc, char *argv[]);
@@ -63,17 +34,16 @@ int doOutbUsb(int argc, char *argv[]);
 int doXoutbUsb(int argc, char *argv[]);
 
 int main(int argc, char *argv[])
-{
+{	
 	if(isComand(argv[0], "inb")) return doInb(argc,argv);
 	else if(isComand(argv[0], "vinb")) return doVinb(argc,argv);
 	else if(isComand(argv[0], "outb")) return doOutb(argc,argv);
 	else if(isComand(argv[0], "xoutb"))return doXoutb(argc,argv);
-
 	//implementação adicionada para dar suporte a adaptador usb
-	else if(isComand(argv[0], "inbusb")) return doInb(argc,argv);
-	else if(isComand(argv[0], "vinbusb")) return doVinb(argc,argv);
-	else if(isComand(argv[0], "outbusb")) return doOutb(argc,argv);
-	else if(isComand(argv[0], "xoutbusb"))return doXoutb(argc,argv);
+	else if(isComand(argv[0], "inbusb")) return doInbUsb(argc,argv); 
+	else if(isComand(argv[0], "vinbusb")) return doVinbUsb(argc,argv);
+	else if(isComand(argv[0], "outbusb")) return doOutbUsb(argc,argv);
+	else if(isComand(argv[0], "xoutbusb"))return doXoutbUsb(argc,argv);
 
 	return 0;
 }
@@ -212,25 +182,45 @@ int doVinbUsb(int argc, char *argv[])
 
 int doOutbUsb(int argc, char *argv[])
 {
-	if(argc == 3 && isNumber(argv[1]) && isNumber(argv[2]))
+	printf("olaaa\n");
+	if(argc == 3 && isNumber(argv[2]))
 	{
-		int puerto, valor, devfd;
+		
+		int valor, devfd, ret;
 		unsigned char	write_value;
-		puerto = stringToInt(argv[1]);
+		char* puerto;
+
+		puerto = argv[1];
 		valor = stringToInt(argv[2]);
 
-		printf("outb 0x%X: ", puerto);
+		printf("outb %s: ", puerto);
 
 		printValue(valor);
 
 		printf("\n");
 
 		devfd = open(puerto, O_RDWR);
+		printf("open resp %d \n",devfd);
 
-		write_value = STR_TO_U8(input_value);
-		ioctl(devfd, PPWDATA, &write_value);
+		ret = ioctl(devfd, PPCLAIM);
+		if (ret < 0) {
+			printf("\nret = %d, errno = %d, Failed to claim the parport!!\n\r", ret, errno);
+			close(devfd);
+			return 1;
+		}
 
-		ioctl(devfd, PPRELEASE);
+		int	data_direction = 0; //Output mode
+		ret = ioctl(devfd, PPDATADIR, &data_direction);		
+
+		ret = ioctl(devfd, PPWDATA, &valor);
+		if (ret < 0) {
+			printf("\n---ret = %d, errno = %d, Failed to access parport register!!\n\r", ret, errno);
+			return 1;
+		}
+
+		ret =  ioctl(devfd, PPRELEASE);
+		close(devfd);
+		printf("close %d \n",ret);
 
 		return 0;
 	}
