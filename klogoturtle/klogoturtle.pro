@@ -32,7 +32,8 @@ CONFIG += mobility
 MOBILITY = 
 
 RESOURCES += \
-    klogoturtle.qrc
+    klogoturtle.qrc \
+    languages.qrc
 
 TRANSLATIONS = languages/klogoturtle_pt_BR.ts  languages/klogoturtle_fs.ts
 
