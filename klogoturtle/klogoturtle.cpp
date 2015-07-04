@@ -89,11 +89,11 @@ void KlogoTurtleApp::initView()
     des->show();
 
     label1 = new QLabel(this);
-    label1->setText(i18n("Commands:"));
+    label1->setText(tr("Commands:"));
     label1->setGeometry(610,60,120,20);
 
     label2 = new QLabel(this);
-    label2->setText(i18n("Messages:"));
+    label2->setText(tr("Messages:"));
     label2->setGeometry(610,460,120,20);
 
     ComandoTextEdit = new QTextEdit(this);
@@ -675,14 +675,14 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                     }
                     else
                     {
-                        MensagemTextEdit->append(i18n("REPEAT with invalid argument"));
+                        MensagemTextEdit->append(tr("REPEAT with invalid argument"));
                         stop_error();
                     }
                 }
             }
             else
             {
-                MensagemTextEdit->append(i18n("REPEAT without END REPEAT"));
+                MensagemTextEdit->append(tr("REPEAT without END REPEAT"));
                 stop_error();
             }
 
@@ -718,7 +718,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                         temp_make2 = var_nome.toInt(&ok_make_temp2,10);
                         if(ok_make_temp2)
                         {
-                            MensagemTextEdit->append(i18n("Variable of MAKE is not correct"));
+                            MensagemTextEdit->append(tr("Variable of MAKE is not correct"));
                             stop_error();
                         }
                         else
@@ -730,14 +730,14 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                             }
                             else
                             {
-                                MensagemTextEdit->append(i18n("Argument of MAKE is not number"));
+                                MensagemTextEdit->append(tr("Argument of MAKE is not number"));
                                 stop_error();
                             }
                         }
                     }
                     else
                     {
-                        MensagemTextEdit->append(i18n("MAKE without ="));
+                        MensagemTextEdit->append(tr("MAKE without ="));
                         stop_error();
                     }
                 }
@@ -759,7 +759,8 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                             prox_comando = pos_comando + 1;
                             tamanho = comando.length();
                             parametro_s = (comando.mid(4,tamanho));
-                            MensagemTextEdit->append(i18n(des->show_var(parametro_s)));
+                            //MensagemTextEdit->append(tr(des->show_var(parametro_s)));
+                            MensagemTextEdit->append(des->show_var(parametro_s));
                             existe_comando = 1;
                         }
                         else
@@ -807,7 +808,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                         {
                                             if((comando.section(':',jj,jj)).length() < 4)
                                             {
-                                                MensagemTextEdit->append(i18n("Command variable of TO have length less than 4"));
+                                                MensagemTextEdit->append(tr("Command variable of TO have length less than 4"));
                                                 stop_error();
                                                 break;
                                             }
@@ -839,7 +840,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                 }
                                 else
                                 {
-                                    MensagemTextEdit->append(i18n("TO without END TO"));
+                                    MensagemTextEdit->append(tr("TO without END TO"));
                                     stop_error();
                                 }
 
@@ -859,7 +860,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                         int pos_sign = comando.indexOf('+',0);
                                         if(pos_ident == -1 || pos_sign == -1)
                                         {
-                                            MensagemTextEdit->append(i18n("Command ADD without = or +"));
+                                            MensagemTextEdit->append(tr("Command ADD without = or +"));
                                             stop_error();
                                         }
                                         else
@@ -877,7 +878,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param2 = param2_temp.toInt(&ok_param2_temp, 10);
                                                 if(ok_param2_temp != true)
                                                 {
-                                                    MensagemTextEdit->append(i18n("Variable of ADD is not number or not defined"));
+                                                    MensagemTextEdit->append(tr("Variable of ADD is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -891,7 +892,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param1 = param1_temp.toInt(&ok_param1_temp, 10);
                                                 if(ok_param1_temp != true)
                                                 {
-                                                    MensagemTextEdit->append(i18n("Variable of ADD is not number or not defined"));
+                                                    MensagemTextEdit->append(tr("Variable of ADD is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -901,7 +902,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                             recebe_ok_temp = 0;
                                             if(ok_recebe == true)
                                             {
-                                                MensagemTextEdit->append(i18n("Variable of ADD is number"));
+                                                MensagemTextEdit->append(tr("Variable of ADD is number"));
                                                 stop_error();
                                             }
                                             else
@@ -920,7 +921,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                         int pos_sign = comando.indexOf('-',0);
                                         if(pos_ident == -1 || pos_sign == -1)
                                         {
-                                            MensagemTextEdit->append(i18n("Command SUB without = or -"));
+                                            MensagemTextEdit->append(tr("Command SUB without = or -"));
                                             stop_error();
                                         }
                                         else
@@ -938,7 +939,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param2 = param2_temp.toInt(&ok_param2_temp, 10);
                                                 if(ok_param2_temp != true)
                                                 {
-                                                    MensagemTextEdit->append(i18n("Variable of SUB is not number or not defined"));
+                                                    MensagemTextEdit->append(tr("Variable of SUB is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -952,7 +953,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param1 = param1_temp.toInt(&ok_param1_temp, 10);
                                                 if(ok_param1_temp != true)
                                                 {
-                                                    MensagemTextEdit->append(i18n("Variable of SUB is not number or not defined"));
+                                                    MensagemTextEdit->append(tr("Variable of SUB is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -962,7 +963,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                             recebe_ok_temp = 0;
                                             if(ok_recebe == true)
                                             {
-                                                MensagemTextEdit->append(i18n("Variable of SUB is number"));
+                                                MensagemTextEdit->append(tr("Variable of SUB is number"));
                                                 stop_error();
                                             }
                                             else
@@ -982,7 +983,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                         int pos_sign = comando.indexOf('*',0);
                                         if(pos_ident == -1 || pos_sign == -1)
                                         {
-                                            MensagemTextEdit->append(i18n("Command MUL without = or *"));
+                                            MensagemTextEdit->append(tr("Command MUL without = or *"));
                                             stop_error();
                                         }
                                         else
@@ -1000,7 +1001,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param2 = param2_temp.toInt(&ok_param2_temp, 10);
                                                 if(ok_param2_temp != true)
                                                 {
-                                                    MensagemTextEdit->append(i18n("Variable of MUL is not number or not defined"));
+                                                    MensagemTextEdit->append(tr("Variable of MUL is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -1014,7 +1015,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param1 = param1_temp.toInt(&ok_param1_temp, 10);
                                                 if(ok_param1_temp != true)
                                                 {
-                                                    MensagemTextEdit->append(i18n("Variable of MUL is not number or not defined"));
+                                                    MensagemTextEdit->append(tr("Variable of MUL is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -1024,7 +1025,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                             recebe_ok_temp = 0;
                                             if(ok_recebe == true)
                                             {
-                                                MensagemTextEdit->append(i18n("Variable of MUL is number"));
+                                                MensagemTextEdit->append(tr("Variable of MUL is number"));
                                                 stop_error();
                                             }
                                             else
@@ -1044,7 +1045,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                         int pos_sign = comando.indexOf('/',0);
                                         if(pos_ident == -1 || pos_sign == -1)
                                         {
-                                            MensagemTextEdit->append(i18n("Command DIV without = or /"));
+                                            MensagemTextEdit->append(tr("Command DIV without = or /"));
                                             stop_error();
                                         }
                                         else
@@ -1062,14 +1063,14 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param2 = param2_temp.toInt(&ok_param2_temp, 10);
                                                 if(ok_param2_temp != true)
                                                 {
-                                                    MensagemTextEdit->append(i18n("Variable of DIV is not number or not defined"));
+                                                    MensagemTextEdit->append(tr("Variable of DIV is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
 
                                             if (i_param2 <= 0)
                                             {
-                                                MensagemTextEdit->append(i18n("Variable of DIV is zero"));
+                                                MensagemTextEdit->append(tr("Variable of DIV is zero"));
                                                 stop_error();
                                             }
                                             bool ok_param1;
@@ -1081,7 +1082,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param1 = param1_temp.toInt(&ok_param1_temp, 10);
                                                 if(ok_param1_temp != true)
                                                 {
-                                                    MensagemTextEdit->append(i18n("Variable of DIV is not number or not defined"));
+                                                    MensagemTextEdit->append(tr("Variable of DIV is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -1091,7 +1092,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                             recebe_ok_temp = 0;
                                             if(ok_recebe == true)
                                             {
-                                                MensagemTextEdit->append(i18n("Variable of DIV is number"));
+                                                MensagemTextEdit->append(tr("Variable of DIV is number"));
                                                 stop_error();
                                             }
                                             else
@@ -1112,7 +1113,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                         int pos_sign = comando.indexOf('/',0);
                                         if(pos_ident == -1 || pos_sign == -1)
                                         {
-                                            MensagemTextEdit->append(i18n("Command REM without = or /"));
+                                            MensagemTextEdit->append(tr("Command REM without = or /"));
                                             stop_error();
                                         }
                                         else
@@ -1130,14 +1131,14 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param2 = param2_temp.toInt(&ok_param2_temp, 10);
                                                 if(ok_param2_temp != true)
                                                 {
-                                                    MensagemTextEdit->append(i18n("Variable of REM is not number or not defined"));
+                                                    MensagemTextEdit->append(tr("Variable of REM is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
 
                                             if (i_param2 <= 0)
                                             {
-                                                MensagemTextEdit->append(i18n("Variable of REM is zero"));
+                                                MensagemTextEdit->append(tr("Variable of REM is zero"));
                                                 stop_error();
                                             }
                                             bool ok_param1;
@@ -1149,7 +1150,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param1 = param1_temp.toInt(&ok_param1_temp, 10);
                                                 if(ok_param1_temp != true)
                                                 {
-                                                    MensagemTextEdit->append(i18n("Variable of REM is not number or not defined"));
+                                                    MensagemTextEdit->append(tr("Variable of REM is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -1159,7 +1160,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                             recebe_ok_temp = 0;
                                             if(ok_recebe == true)
                                             {
-                                                MensagemTextEdit->append(i18n("Variable of REM is number"));
+                                                MensagemTextEdit->append(tr("Variable of REM is number"));
                                                 stop_error();
                                             }
                                             else
@@ -1218,7 +1219,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                     i_if_param1 = param1_if_temp.toInt(&ok_param1_if_temp, 10);
                                                     if(ok_param1_if_temp != true)
                                                     {
-                                                        MensagemTextEdit->append(i18n("Variable of IF is not number or not defined"));
+                                                        MensagemTextEdit->append(tr("Variable of IF is not number or not defined"));
                                                         stop_error();
                                                     }
                                                 }
@@ -1232,7 +1233,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                     i_if_param2 = param2_if_temp.toInt(&ok_param2_if_temp, 10);
                                                     if(ok_param2_if_temp != true)
                                                     {
-                                                        MensagemTextEdit->append(i18n("Variable of IF is not number or not defined"));
+                                                        MensagemTextEdit->append(tr("Variable of IF is not number or not defined"));
                                                         stop_error();
                                                     }
                                                 }
@@ -1263,7 +1264,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                         i_if_param1 = param1_if_temp.toInt(&ok_param1_if_temp, 10);
                                                         if(ok_param1_if_temp != true)
                                                         {
-                                                            MensagemTextEdit->append(i18n("Variable of IF is not number or not defined"));
+                                                            MensagemTextEdit->append(tr("Variable of IF is not number or not defined"));
                                                             stop_error();
                                                         }
                                                     }
@@ -1277,7 +1278,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                         i_if_param2 = param2_if_temp.toInt(&ok_param2_if_temp, 10);
                                                         if(ok_param2_if_temp != true)
                                                         {
-                                                            MensagemTextEdit->append(i18n("Variable of IF is not number or not defined"));
+                                                            MensagemTextEdit->append(tr("Variable of IF is not number or not defined"));
                                                             stop_error();
                                                         }
                                                     }
@@ -1309,7 +1310,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                             i_if_param1 = param1_if_temp.toInt(&ok_param1_if_temp, 10);
                                                             if(ok_param1_if_temp != true)
                                                             {
-                                                                MensagemTextEdit->append(i18n("Variable of IF is not number or not defined"));
+                                                                MensagemTextEdit->append(tr("Variable of IF is not number or not defined"));
                                                                 stop_error();
                                                             }
                                                         }
@@ -1323,7 +1324,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                             i_if_param2 = param2_if_temp.toInt(&ok_param2_if_temp, 10);
                                                             if(ok_param2_if_temp != true)
                                                             {
-                                                                MensagemTextEdit->append(i18n("Variable of IF is not number or not defined"));
+                                                                MensagemTextEdit->append(tr("Variable of IF is not number or not defined"));
                                                                 stop_error();
                                                             }
                                                         }
@@ -1354,7 +1355,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                                 i_if_param1 = param1_if_temp.toInt(&ok_param1_if_temp, 10);
                                                                 if(ok_param1_if_temp != true)
                                                                 {
-                                                                    MensagemTextEdit->append(i18n("Variable of IF is not number or not defined"));
+                                                                    MensagemTextEdit->append(tr("Variable of IF is not number or not defined"));
                                                                     stop_error();
                                                                 }
                                                             }
@@ -1368,7 +1369,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                                 i_if_param2 = param2_if_temp.toInt(&ok_param2_if_temp, 10);
                                                                 if(ok_param2_if_temp != true)
                                                                 {
-                                                                    MensagemTextEdit->append(i18n("Variable of IF is not number or not defined"));
+                                                                    MensagemTextEdit->append(tr("Variable of IF is not number or not defined"));
                                                                     stop_error();
                                                                 }
                                                             }
@@ -1386,7 +1387,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                         {
                                                             if(comando.startsWith("ENDIF") != true)
                                                             {
-                                                                MensagemTextEdit->append(i18n("IF without operand"));
+                                                                MensagemTextEdit->append(tr("IF without operand"));
                                                                 stop_error();
                                                             }
                                                         }
@@ -1398,7 +1399,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                         }
                                         else
                                         {
-                                            MensagemTextEdit->append(i18n("IF without END IF"));
+                                            MensagemTextEdit->append(tr("IF without END IF"));
                                             stop_error();
                                         }
 
@@ -1432,7 +1433,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 }
                                                 else
                                                 {
-                                                    MensagemTextEdit->append(i18n("FD with invalid argument"));
+                                                    MensagemTextEdit->append(tr("FD with invalid argument"));
                                                     stop_error();
                                                 }
                                             }
@@ -1455,7 +1456,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 }
                                                 else
                                                 {
-                                                    MensagemTextEdit->append(i18n("BK with invalid argument"));
+                                                    MensagemTextEdit->append(tr("BK with invalid argument"));
                                                     stop_error();
                                                 }
                                             }
@@ -1478,7 +1479,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 }
                                                 else
                                                 {
-                                                    MensagemTextEdit->append(i18n("LT with invalid argument"));
+                                                    MensagemTextEdit->append(tr("LT with invalid argument"));
                                                     stop_error();
                                                 }
                                             }
@@ -1501,7 +1502,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 }
                                                 else
                                                 {
-                                                    MensagemTextEdit->append(i18n("RT with invalid argument"));
+                                                    MensagemTextEdit->append(tr("RT with invalid argument"));
                                                     stop_error();
                                                 }
                                             }
@@ -1524,7 +1525,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 }
                                                 else
                                                 {
-                                                    MensagemTextEdit->append(i18n("SX with invalid argument"));
+                                                    MensagemTextEdit->append(tr("SX with invalid argument"));
                                                     stop_error();
                                                 }
                                             }
@@ -1547,7 +1548,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 }
                                                 else
                                                 {
-                                                    MensagemTextEdit->append(i18n("SY with invalid argument"));
+                                                    MensagemTextEdit->append(tr("SY with invalid argument"));
                                                     stop_error();
                                                 }
                                             }
@@ -1632,7 +1633,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
             }
             else
             {
-                MensagemTextEdit->append(i18n("Invalid command:"));
+                MensagemTextEdit->append(tr("Invalid command:"));
                 MensagemTextEdit->append(comando);
                 tem_erro = 1;
                 stop_error();
@@ -1671,10 +1672,6 @@ void KlogoTurtleApp::slotRun()
 
     if(tem_erro == 0) des->tartaruga(tem_erro);
 
-}
-
-QString KlogoTurtleApp::i18n(QString str){
-    return str;
 }
 
 int KlogoTurtleApp::Repete(int param, int par_ini, QStringList lines)

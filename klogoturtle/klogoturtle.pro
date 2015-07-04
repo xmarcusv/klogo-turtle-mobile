@@ -34,3 +34,4 @@ MOBILITY =
 RESOURCES += \
     klogoturtle.qrc
 
+TRANSLATIONS = languages/pt_BR.ts  languages/fs.ts

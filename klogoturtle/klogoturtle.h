@@ -56,6 +56,7 @@ protected:
      */
     void initView();
     void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
+    void changeEvent(QEvent*);
 
 protected slots:
   // this slot is called by the language menu actions
@@ -101,7 +102,7 @@ private:
     bool maybeSave();
     void createLanguageMenu(void);
     void loadLanguage(const QString& rLanguage);
-    void changeEvent(QEvent*);
+
 
     QMenu *fileMenu;
     QMenu *editMenu;
