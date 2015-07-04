@@ -200,5 +200,22 @@ void printValue(int valor)
 
 //implementação adicionada para dar suporte a adaptador usb
 
+int doInbUsb(int argc, char *argv[])
+{
+	return 1;
+}
 
+int doVinbUsb(int argc, char *argv[])
+{
+	return 1;
+}
 
+int doOutbUsb(int argc, char *argv[])
+{
+	return 1;
+}
+
+int doXoutbUsb(int argc, char *argv[])
+{
+	return 1;
+}
