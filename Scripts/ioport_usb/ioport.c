@@ -182,7 +182,6 @@ int doVinbUsb(int argc, char *argv[])
 
 int doOutbUsb(int argc, char *argv[])
 {
-	printf("olaaa\n");
 	if(argc == 3 && isNumber(argv[2]))
 	{
 		
