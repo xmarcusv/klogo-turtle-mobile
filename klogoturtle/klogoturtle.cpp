@@ -23,9 +23,12 @@ KlogoTurtleApp::KlogoTurtleApp(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::KlogoTurtleApp)
 {
+
+    qApp->installTranslator(&m_translator);
+    qApp->installTranslator(&m_translatorQt);
     ui->setupUi(this);
 
-    idioma_escolhido = "ingles";
+    idioma_escolhido = "pt_BR";
 
     ///////////////////////////////////////////////////////////////////
     // call inits to invoke all other construction parts
@@ -347,8 +350,8 @@ void KlogoTurtleApp::createLanguageMenu(void)
     for (int i = 0; i < fileNames.size(); ++i) {
         // get locale extracted by filename
         QString locale;
-        locale = fileNames[i]; // "TranslationExample_de.qm"
-        locale.truncate(locale.lastIndexOf('.')); // "TranslationExample_de"
+        locale = fileNames[i]; // "klogoturtle_de.qm"
+        locale.truncate(locale.lastIndexOf('.')); // "klogoturtle_de"
         locale.remove(0, locale.indexOf('_') + 1); // "de"
 
         QString lang = QLocale::languageToString(QLocale(locale).language());
@@ -382,6 +385,16 @@ void switchTranslator(QTranslator& translator, const QString& filename)
     qApp->removeTranslator(&translator);
 
     // load the new translator
+    if(translator.load(filename, ":/languages"))
+        qApp->installTranslator(&translator);
+}
+
+void switchTranslatorQT(QTranslator& translator, const QString& filename)
+{
+    // remove the old translator
+    qApp->removeTranslator(&translator);
+
+    // load the new translator
     if(translator.load(filename))
         qApp->installTranslator(&translator);
 }
@@ -393,8 +406,8 @@ void KlogoTurtleApp::loadLanguage(const QString& rLanguage)
         QLocale locale = QLocale(idioma_escolhido);
         QLocale::setDefault(locale);
         QString languageName = QLocale::languageToString(locale.language());
-        switchTranslator(m_translator, QString("TranslationExample_%1.qm").arg(rLanguage));
-        switchTranslator(m_translatorQt, QString("qt_%1.qm").arg(rLanguage));
+        switchTranslator(m_translator, QString("klogoturtle_%1.qm").arg(rLanguage));
+        switchTranslatorQT(m_translatorQt, QString("qt_%1.qm").arg(rLanguage));
         statusBar()->showMessage(tr("Current Language changed to %1").arg(languageName));
     }
 }
