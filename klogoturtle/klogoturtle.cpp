@@ -12,6 +12,8 @@
 #include <QtPrintSupport/QPrintDialog>
 #include <QToolBar>
 #include <QLocale>
+#include <QStatusBar>
+#include <QMenuBar>
 
 //That's for the StatusBar
 //If you define more, it will allow you to have several items in the StatusBar
@@ -421,7 +423,6 @@ void KlogoTurtleApp::createMenus()
     editMenu->addAction(pasteAct);
 
     languageMenu = menuBar()->addMenu(tr("&Language"));
-    languageMenu->addSeparator();
     createLanguageMenu();
 
     menuBar()->addSeparator();
