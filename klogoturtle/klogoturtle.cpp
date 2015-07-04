@@ -57,6 +57,7 @@ void KlogoTurtleApp::closeEvent(QCloseEvent *event)
 
 void KlogoTurtleApp::changeEvent(QEvent* event)
 {
+
     if(0 != event) {
         switch(event->type()) {
         // this event is send if a translator is loaded
