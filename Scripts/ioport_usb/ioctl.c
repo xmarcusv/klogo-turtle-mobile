@@ -212,6 +212,30 @@ int doVinbUsb(int argc, char *argv[])
 
 int doOutbUsb(int argc, char *argv[])
 {
+	if(argc == 3 && isNumber(argv[1]) && isNumber(argv[2]))
+	{
+		int puerto, valor, devfd;
+		unsigned char	write_value;
+		puerto = stringToInt(argv[1]);
+		valor = stringToInt(argv[2]);
+
+		printf("outb 0x%X: ", puerto);
+
+		printValue(valor);
+
+		printf("\n");
+
+		devfd = open(puerto, O_RDWR);
+
+		write_value = STR_TO_U8(input_value);
+		ioctl(devfd, PPWDATA, &write_value);
+
+		ioctl(devfd, PPRELEASE);
+
+		return 0;
+	}
+	
+	printf("modo de uso: outb <numero da porta> <valor>\n");
 	return 1;
 }
 

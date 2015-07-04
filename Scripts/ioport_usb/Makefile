@@ -23,9 +23,17 @@ install:
 	sudo ln -s $(DESTINO)/ioport $(DESTINO)/vinb
 	sudo ln -s $(DESTINO)/ioport $(DESTINO)/outb
 	sudo ln -s $(DESTINO)/ioport $(DESTINO)/xoutb
+	sudo ln -s $(DESTINO)/ioport $(DESTINO)/inbusb
+	sudo ln -s $(DESTINO)/ioport $(DESTINO)/vinbusb
+	sudo ln -s $(DESTINO)/ioport $(DESTINO)/outbusb
+	sudo ln -s $(DESTINO)/ioport $(DESTINO)/xoutbusb
 uninstall:
 	sudo rm -f $(DESTINO)/ioport
 	sudo rm -f $(DESTINO)/inb
 	sudo rm -f $(DESTINO)/vinb
 	sudo rm -f $(DESTINO)/outb
 	sudo rm -f $(DESTINO)/xoutb
+	sudo rm -f $(DESTINO)/inbusb
+	sudo rm -f $(DESTINO)/vinbusb
+	sudo rm -f $(DESTINO)/outbusb
+	sudo rm -f $(DESTINO)/xoutbusb
