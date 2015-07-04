@@ -18,6 +18,27 @@ else
  modprobe lp >> /dev/null
  echo "installed"
 fi
+if(grep "ppdev lp" /etc/rc.local >>/dev/null) then
+ echo "ppdev already Installed !!!"
+else
+ echo "modprobe ppdev" >> /etc/rc.local
+ modprobe ppdev >> /dev/null
+ echo "installed"
+fi
+if(grep "modprobe parport" /etc/rc.local >>/dev/null) then
+ echo "parport already Installed !!!"
+else
+ echo "modprobe parport" >> /etc/rc.local
+ modprobe parport >> /dev/null
+ echo "installed"
+fi
+if(grep "modprobe parport_pc" /etc/rc.local >>/dev/null) then
+ echo "parport_pc already Installed !!!"
+else
+ echo "modprobe parport_pc" >> /etc/rc.local
+ modprobe parport_pc >> /dev/null
+ echo "installed"
+fi
 
 
 if(grep "insmod /lib/modules/`uname -r`/kernel/drivers/usb/serial/moschip/mos7705.ko" /etc/rc.local >>/dev/null) then
