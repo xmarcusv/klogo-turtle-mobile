@@ -14,6 +14,8 @@
 
 namespace Ui {
 class KlogoTurtleApp;
+class QAction;
+class QMenu;
 }
 
 class KlogoTurtleApp : public QMainWindow
@@ -52,9 +54,18 @@ protected:
     /** creates the centerwidget of the KTMainWindow instance and sets it as the view
      */
     void initView();
+    void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
 
 public slots:
     void slotRun();
+
+private slots:
+    void newFile();
+    void open();
+    bool save();
+    bool saveAs();
+    void about();
+    void print();
 
 private:
     Ui::KlogoTurtleApp *ui;
@@ -73,6 +84,29 @@ private:
     int tem_erro;
 
     QString i18n(QString str);
+
+    void createActions();
+    void createMenus();
+    void createToolBars();
+    void createStatusBar();
+    bool maybeSave();
+
+    QMenu *fileMenu;
+    QMenu *editMenu;
+    QMenu *helpMenu;
+    QToolBar *fileToolBar;
+    QToolBar *editToolBar;
+    QAction *newAct;
+    QAction *openAct;
+    QAction *saveAct;
+    QAction *saveAsAct;
+    QAction *exitAct;
+    QAction *cutAct;
+    QAction *copyAct;
+    QAction *pasteAct;
+    QAction *aboutAct;
+    QAction *aboutQtAct;
+    QAction *printAsAct;
 };
 
 #endif // KLOGOTURTLE_H

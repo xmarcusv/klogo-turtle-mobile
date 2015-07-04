@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,4 +30,7 @@ FORMS    += klogoturtle.ui \
 
 CONFIG += mobility
 MOBILITY = 
+
+RESOURCES += \
+    klogoturtle.qrc
 

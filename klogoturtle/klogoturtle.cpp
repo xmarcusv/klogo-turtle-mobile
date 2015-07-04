@@ -3,6 +3,19 @@
 #include "stdio.h"
 #include "sys/ioctl.h"
 #include "unistd.h"
+#include <QMessageBox>
+#include <QTextStream>
+#include <QFile>
+#include <QFileDialog>
+#include <QCloseEvent>
+#include <QtPrintSupport/QPrinter>
+#include <QtPrintSupport/QPrintDialog>
+#include <QToolBar>
+
+//That's for the StatusBar
+//If you define more, it will allow you to have several items in the StatusBar
+const int ID_STATUS_MSG     = 1;
+
 KlogoTurtleApp::KlogoTurtleApp(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::KlogoTurtleApp)
@@ -14,12 +27,26 @@ KlogoTurtleApp::KlogoTurtleApp(QWidget *parent) :
     ///////////////////////////////////////////////////////////////////
     // call inits to invoke all other construction parts
     initView();
+    createActions();
+    createMenus();
+    createToolBars();
+    createStatusBar();
 
     apaga_to();
     n_to = 0;
     qual_comando = 1;
 
     //setCentralWidget(des);
+}
+
+void KlogoTurtleApp::closeEvent(QCloseEvent *event)
+{
+    if (maybeSave()) {
+        //writeSettings();
+        event->accept();
+    } else {
+        event->ignore();
+    }
 }
 
 KlogoTurtleApp::~KlogoTurtleApp()
@@ -65,6 +92,263 @@ void KlogoTurtleApp::initView()
     saidaComboBox->insertItem(2,"Todos");
 
     QObject::connect(runButton, SIGNAL(clicked()), this, SLOT(slotRun()));
+}
+
+void KlogoTurtleApp::newFile()
+{
+    if (maybeSave()) {
+        statusBar()->showMessage(tr("Creating new document..."), ID_STATUS_MSG);
+        ComandoTextEdit->setText("");
+        filename = "";
+        des->cnew();
+        statusBar()->showMessage(tr("Ready."), ID_STATUS_MSG);
+    }
+}
+
+void KlogoTurtleApp::open()
+{
+    if (maybeSave()) {
+         statusBar()->showMessage(tr("Opening file..."), ID_STATUS_MSG);
+
+        QString fn = QFileDialog::getOpenFileName(this);
+        if (!fn.isEmpty())
+        {
+            QFile f(fn);
+            if (!f.open(QFile::ReadOnly))
+                return;
+            QTextStream ts(&f);
+            ComandoTextEdit->setText(ts.readAll());
+             statusBar()->showMessage(tr("Loaded document."), ID_STATUS_MSG);
+            filename = fn;
+        }
+        else
+             statusBar()->showMessage(tr("Loading aborted."), ID_STATUS_MSG);
+
+
+         statusBar()->showMessage(tr("Ready."),ID_STATUS_MSG);
+    }
+}
+
+bool KlogoTurtleApp::save()
+{
+    statusBar()->showMessage(tr("Saving file..."), ID_STATUS_MSG);
+    if (filename.isEmpty())
+    {
+        return saveAs();
+    }
+
+    QString text = ComandoTextEdit->toPlainText();
+    QFile f(filename);
+    if (!f.open(QFile::WriteOnly))
+    {
+        statusBar()->showMessage(tr("Could not write to file."), ID_STATUS_MSG);
+        return true;
+    }
+
+    QTextStream t(&f);
+    t << text;
+    f.close();
+
+    statusBar()->showMessage(tr("File saved."), ID_STATUS_MSG);
+    statusBar()->showMessage(tr("Ready."),ID_STATUS_MSG );
+    return true;
+}
+
+bool KlogoTurtleApp::saveAs()
+{
+    QFileDialog dialog(this);
+    dialog.setWindowModality(Qt::WindowModal);
+    dialog.setAcceptMode(QFileDialog::AcceptSave);
+    QStringList files;
+    if (dialog.exec())
+        files = dialog.selectedFiles();
+    else
+        return false;
+
+    filename = files.at(0);
+    return save();
+}
+
+void KlogoTurtleApp::about()
+{
+   QMessageBox::about(this, tr("About Application"),
+            tr("The <b>Application</b> example demonstrates how to "
+               "write modern GUI applications using Qt, with a menu bar, "
+               "toolbars, and a status bar."));
+}
+
+bool KlogoTurtleApp::maybeSave()
+{
+    if (ComandoTextEdit->document()->isModified()) {
+        QMessageBox::StandardButton ret;
+        ret = QMessageBox::warning(this, tr("Application"),
+                     tr("The document has been modified.\n"
+                        "Do you want to save your changes?"),
+                     QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+        if (ret == QMessageBox::Save)
+            return save();
+        else if (ret == QMessageBox::Cancel)
+            return false;
+    }
+    return true;
+}
+
+
+void KlogoTurtleApp::print()
+{
+    statusBar()->showMessage(tr("Printing..."),ID_STATUS_MSG);
+
+    const int Margin = 10;
+    QPrinter printer;
+
+    QPrintDialog dialog(&printer, this);
+    dialog.setWindowTitle(tr("Print Document"));
+
+    if (dialog.exec() == QDialog::Accepted)
+    {
+        QPainter printpainter(&printer);
+
+        printpainter.setFont(ComandoTextEdit->font());
+        int yPos = 0;                               // y-position for each line
+        QFontMetrics fm = printpainter.fontMetrics();
+
+        QString plainTextEditContents = ComandoTextEdit->toPlainText();
+        QStringList lines = plainTextEditContents.split("\n");
+
+        for(int i = 0 ; i < lines.count() ; i++)
+        {
+            if (Margin + yPos > printer.height() - Margin)
+            {
+                printer.newPage();                 // no more room on this page
+                yPos = 0;                           // back to top of page
+            }
+            printpainter.drawText(Margin, Margin + yPos, printer.width(), fm.lineSpacing(), Qt::TextExpandTabs | Qt::TextDontClip, lines[i]);
+            yPos = yPos + fm.lineSpacing();
+        }
+
+        printpainter.end();
+        statusBar()->showMessage(tr("Printing completed."), ID_STATUS_MSG);
+    }
+    else
+    {
+        statusBar()->showMessage(tr("Printing aborted."), ID_STATUS_MSG);
+    }
+
+    statusBar()->showMessage(tr("Ready."), ID_STATUS_MSG);
+}
+
+void KlogoTurtleApp::createActions()
+{
+    newAct = new QAction(QIcon(":/images/new.png"), tr("&New"), this);
+    newAct->setShortcuts(QKeySequence::New);
+    newAct->setStatusTip(tr("Create a new file"));
+    connect(newAct, SIGNAL(triggered()), this, SLOT(newFile()));
+
+
+    openAct = new QAction(QIcon(":/images/open.png"), tr("&Open..."), this);
+    openAct->setShortcuts(QKeySequence::Open);
+    openAct->setStatusTip(tr("Open an existing file"));
+    connect(openAct, SIGNAL(triggered()), this, SLOT(open()));
+
+    saveAct = new QAction(QIcon(":/images/save.png"), tr("&Save"), this);
+    saveAct->setShortcuts(QKeySequence::Save);
+    saveAct->setStatusTip(tr("Save the document to disk"));
+    connect(saveAct, SIGNAL(triggered()), this, SLOT(save()));
+
+    saveAsAct = new QAction(tr("Save &As..."), this);
+    saveAsAct->setShortcuts(QKeySequence::SaveAs);
+    saveAsAct->setStatusTip(tr("Save the document under a new name"));
+    connect(saveAsAct, SIGNAL(triggered()), this, SLOT(saveAs()));
+
+    printAsAct = new QAction(QIcon(":/images/print.png"), tr("Print..."), this);
+    printAsAct->setShortcuts(QKeySequence::Print);
+    printAsAct->setStatusTip(tr("Print..."));
+    connect(printAsAct, SIGNAL(triggered()), this, SLOT(print()));
+
+    exitAct = new QAction(tr("E&xit"), this);
+    exitAct->setShortcuts(QKeySequence::Quit);
+    exitAct->setStatusTip(tr("Exit the application"));
+    connect(exitAct, SIGNAL(triggered()), this, SLOT(close()));
+
+
+    cutAct = new QAction(QIcon(":/images/cut.png"), tr("Cu&t"), this);
+    cutAct->setShortcuts(QKeySequence::Cut);
+    cutAct->setStatusTip(tr("Cut the current selection's contents to the "
+                            "clipboard"));
+    connect(cutAct, SIGNAL(triggered()), ComandoTextEdit, SLOT(cut()));
+
+    copyAct = new QAction(QIcon(":/images/copy.png"), tr("&Copy"), this);
+    copyAct->setShortcuts(QKeySequence::Copy);
+    copyAct->setStatusTip(tr("Copy the current selection's contents to the "
+                             "clipboard"));
+    connect(copyAct, SIGNAL(triggered()), ComandoTextEdit, SLOT(copy()));
+
+    pasteAct = new QAction(QIcon(":/images/paste.png"), tr("&Paste"), this);
+    pasteAct->setShortcuts(QKeySequence::Paste);
+    pasteAct->setStatusTip(tr("Paste the clipboard's contents into the current "
+                              "selection"));
+    connect(pasteAct, SIGNAL(triggered()), ComandoTextEdit, SLOT(paste()));
+
+    aboutAct = new QAction(tr("&About"), this);
+    aboutAct->setStatusTip(tr("Show the application's About box"));
+    connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+
+
+    aboutQtAct = new QAction(tr("About &Qt"), this);
+    aboutQtAct->setStatusTip(tr("Show the Qt library's About box"));
+    connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+
+
+    cutAct->setEnabled(false);
+    copyAct->setEnabled(false);
+    connect(ComandoTextEdit, SIGNAL(copyAvailable(bool)),
+            cutAct, SLOT(setEnabled(bool)));
+    connect(ComandoTextEdit, SIGNAL(copyAvailable(bool)),
+            copyAct, SLOT(setEnabled(bool)));
+}
+
+void KlogoTurtleApp::createMenus()
+{
+    fileMenu = menuBar()->addMenu(tr("&File"));
+    fileMenu->addAction(newAct);
+    fileMenu->addAction(openAct);
+    fileMenu->addSeparator();
+    fileMenu->addAction(saveAct);
+    fileMenu->addAction(saveAsAct);
+    fileMenu->addSeparator();
+    fileMenu->addAction(printAsAct);
+    fileMenu->addSeparator();
+    fileMenu->addAction(exitAct);
+
+    editMenu = menuBar()->addMenu(tr("&Edit"));
+    editMenu->addAction(cutAct);
+    editMenu->addAction(copyAct);
+    editMenu->addAction(pasteAct);
+
+    menuBar()->addSeparator();
+
+    helpMenu = menuBar()->addMenu(tr("&Help"));
+    helpMenu->addAction(aboutAct);
+    helpMenu->addAction(aboutQtAct);
+}
+
+void KlogoTurtleApp::createToolBars()
+{
+    fileToolBar = addToolBar(tr("File"));
+    fileToolBar->addAction(newAct);
+    fileToolBar->addAction(openAct);
+    fileToolBar->addAction(saveAct);
+    fileToolBar->addAction(printAsAct);
+
+    editToolBar = addToolBar(tr("Edit"));
+    editToolBar->addAction(cutAct);
+    editToolBar->addAction(copyAct);
+    editToolBar->addAction(pasteAct);
+}
+
+void KlogoTurtleApp::createStatusBar()
+{
+    statusBar()->showMessage(tr("Ready"));
 }
 
 int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
