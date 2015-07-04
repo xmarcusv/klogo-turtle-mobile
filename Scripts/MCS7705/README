@@ -1,0 +1,14 @@
+
+						 Instructions 
+					       =================
+To Compile the driver module
+	1) make 
+
+For Dynamic Loading & Unloading the mcs7705 driver module
+	1) make load
+	2) make unload
+
+For Static loading & unloading the mcs7705 driver module 
+	1) make install 
+	2) make uninstall
+
