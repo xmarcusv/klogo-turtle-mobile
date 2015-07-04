@@ -9,6 +9,7 @@
 #include <QLabel>
 #include <QStringList>
 #include <QComboBox>
+#include <QTranslator>
 
 #include "desenho.h"
 
@@ -56,6 +57,10 @@ protected:
     void initView();
     void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
 
+protected slots:
+  // this slot is called by the language menu actions
+  void slotLanguageChanged(QAction* action);
+
 public slots:
     void slotRun();
 
@@ -75,6 +80,10 @@ private:
     QString guarda_to [10] [2];
     QString temp_comando_to;
     QString idioma_escolhido;
+    QString m_langPath;
+
+    QTranslator m_translator; // contains the translations for this application
+    QTranslator m_translatorQt; // contains the translations for qt
 
     int id_ingles;
     int id_alemao;
@@ -90,10 +99,14 @@ private:
     void createToolBars();
     void createStatusBar();
     bool maybeSave();
+    void createLanguageMenu(void);
+    void loadLanguage(const QString& rLanguage);
+    void changeEvent(QEvent*);
 
     QMenu *fileMenu;
     QMenu *editMenu;
     QMenu *helpMenu;
+    QMenu *languageMenu;
     QToolBar *fileToolBar;
     QToolBar *editToolBar;
     QAction *newAct;

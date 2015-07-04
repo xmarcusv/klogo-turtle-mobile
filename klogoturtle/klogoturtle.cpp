@@ -11,6 +11,7 @@
 #include <QtPrintSupport/QPrinter>
 #include <QtPrintSupport/QPrintDialog>
 #include <QToolBar>
+#include <QLocale>
 
 //That's for the StatusBar
 //If you define more, it will allow you to have several items in the StatusBar
@@ -47,6 +48,28 @@ void KlogoTurtleApp::closeEvent(QCloseEvent *event)
     } else {
         event->ignore();
     }
+}
+
+void KlogoTurtleApp::changeEvent(QEvent* event)
+{
+    if(0 != event) {
+        switch(event->type()) {
+        // this event is send if a translator is loaded
+        case QEvent::LanguageChange:
+            ui->retranslateUi(this);
+            break;
+
+            // this event is send, if the system, language changes
+        case QEvent::LocaleChange:
+        {
+            QString locale = QLocale::system().name();
+            locale.truncate(locale.lastIndexOf('_'));
+            loadLanguage(locale);
+        }
+            break;
+        }
+    }
+    QMainWindow::changeEvent(event);
 }
 
 KlogoTurtleApp::~KlogoTurtleApp()
@@ -293,7 +316,6 @@ void KlogoTurtleApp::createActions()
     aboutAct->setStatusTip(tr("Show the application's About box"));
     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
 
-
     aboutQtAct = new QAction(tr("About &Qt"), this);
     aboutQtAct->setStatusTip(tr("Show the Qt library's About box"));
     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
@@ -305,6 +327,79 @@ void KlogoTurtleApp::createActions()
             cutAct, SLOT(setEnabled(bool)));
     connect(ComandoTextEdit, SIGNAL(copyAvailable(bool)),
             copyAct, SLOT(setEnabled(bool)));
+}
+
+void KlogoTurtleApp::createLanguageMenu(void)
+{
+    QActionGroup* langGroup = new QActionGroup(this);
+    langGroup->setExclusive(true);
+
+    connect(langGroup, SIGNAL (triggered(QAction *)), this, SLOT (slotLanguageChanged(QAction *)));
+
+    // format systems language
+    QString defaultLocale = QLocale::system().name(); // e.g. "de_DE"
+    defaultLocale.truncate(defaultLocale.lastIndexOf('_')); // e.g. "de"
+
+    m_langPath = QApplication::applicationDirPath();
+    m_langPath.append("/languages");
+    QDir dir(m_langPath);
+    QStringList fileNames = dir.entryList(QStringList("TranslationExample_*.qm"));
+
+    for (int i = 0; i < fileNames.size(); ++i) {
+        // get locale extracted by filename
+        QString locale;
+        locale = fileNames[i]; // "TranslationExample_de.qm"
+        locale.truncate(locale.lastIndexOf('.')); // "TranslationExample_de"
+        locale.remove(0, locale.indexOf('_') + 1); // "de"
+
+        QString lang = QLocale::languageToString(QLocale(locale).language());
+        QIcon ico(QString("%1/%2.png").arg(m_langPath).arg(locale));
+
+        QAction *action = new QAction(ico, lang, this);
+        action->setCheckable(true);
+        action->setData(locale);
+
+        languageMenu->addAction(action);
+        langGroup->addAction(action);
+
+        // set default translators and language checked
+        if (defaultLocale == locale)
+        {
+            action->setChecked(true);
+        }
+    }
+}
+
+void KlogoTurtleApp::slotLanguageChanged(QAction* action)
+{
+    if(0 != action) {
+        // load the language dependant on the action content
+        loadLanguage(action->data().toString());
+        setWindowIcon(action->icon());
+    }
+}
+
+void switchTranslator(QTranslator& translator, const QString& filename)
+{
+    // remove the old translator
+    qApp->removeTranslator(&translator);
+
+    // load the new translator
+    if(translator.load(filename))
+        qApp->installTranslator(&translator);
+}
+
+void KlogoTurtleApp::loadLanguage(const QString& rLanguage)
+{
+    if(idioma_escolhido != rLanguage) {
+        idioma_escolhido = rLanguage;
+        QLocale locale = QLocale(idioma_escolhido);
+        QLocale::setDefault(locale);
+        QString languageName = QLocale::languageToString(locale.language());
+        switchTranslator(m_translator, QString("TranslationExample_%1.qm").arg(rLanguage));
+        switchTranslator(m_translatorQt, QString("qt_%1.qm").arg(rLanguage));
+        statusBar()->showMessage(tr("Current Language changed to %1").arg(languageName));
+    }
 }
 
 void KlogoTurtleApp::createMenus()
@@ -324,6 +419,10 @@ void KlogoTurtleApp::createMenus()
     editMenu->addAction(cutAct);
     editMenu->addAction(copyAct);
     editMenu->addAction(pasteAct);
+
+    languageMenu = menuBar()->addMenu(tr("&Language"));
+    languageMenu->addSeparator();
+    createLanguageMenu();
 
     menuBar()->addSeparator();
 
