@@ -206,7 +206,7 @@ int doOutbUsb(int argc, char *argv[])
 
 		ret = ioctl(devfd, PPCLAIM);
 		if (ret < 0) {
-			printf("\nret = %d, errno = %d, Failed to claim the parport!!\n\r", ret, errno);
+			printf("\nret = %d, errno = %d, Ocorreu um erro ao reinvidicar acesso a porta!!\n\r", ret, errno);
 			close(devfd);
 			return 1;
 		}
@@ -216,7 +216,7 @@ int doOutbUsb(int argc, char *argv[])
 
 		ret = ioctl(devfd, PPWDATA, &valor);
 		if (ret < 0) {
-			printf("\n---ret = %d, errno = %d, Failed to access parport register!!\n\r", ret, errno);
+			printf("\n---ret = %d, errno = %d, Erro ao acessar o registro da porta2!!\n\r", ret, errno);
 			return 1;
 		}
 
@@ -267,7 +267,7 @@ int doOutbUsb(int argc, char *argv[])
 
 					ret = ioctl(devfd, PPWDATA, &valor);
 					if (ret < 0) {
-						printf("\n---ret = %d, errno = %d, Erro ao acessar o registro da porta!!\n\r", ret, errno);
+						printf("\n---ret = %d, errno = %d, Erro ao acessar o registro da porta2!!\n\r", ret, errno);
 						continue;
 					}
 
@@ -282,7 +282,7 @@ int doOutbUsb(int argc, char *argv[])
 			return 1;
 		}
 	}
-	
+
 	printf("modo de uso: outbusb <numero da porta> <valor>\n");
 	return 1;
 }
