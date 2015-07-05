@@ -415,7 +415,7 @@ void switchTranslator(QTranslator& translator, const QString& filename)
     qApp->removeTranslator(&translator);
 
     // load the new translator
-    if(translator.load(filename, ":/languages"))
+    if(translator.load(filename, ":/languages/languages"))
         qApp->installTranslator(&translator);
 }
 
