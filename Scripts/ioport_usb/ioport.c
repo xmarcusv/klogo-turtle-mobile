@@ -224,7 +224,6 @@ int doOutbUsb(int argc, char *argv[])
 
 		ret =  ioctl(devfd, PPRELEASE);
 		close(devfd);
-		printf("close %d \n",ret);
 
 		return 0;
 	}else if(argc == 2 && isNumber(argv[1])){
@@ -275,7 +274,6 @@ int doOutbUsb(int argc, char *argv[])
 
 					ret =  ioctl(devfd, PPRELEASE);
 					close(devfd);
-					printf("close %d \n",ret);
 
 					return 0;
 				}				

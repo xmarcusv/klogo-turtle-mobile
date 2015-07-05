@@ -14,6 +14,7 @@
 #include <QLocale>
 #include <QStatusBar>
 #include <QMenuBar>
+#include <QProcess>
 
 //That's for the StatusBar
 //If you define more, it will allow you to have several items in the StatusBar
@@ -115,10 +116,8 @@ void KlogoTurtleApp::initView()
 
     saidaComboBox = new QComboBox(this);
     saidaComboBox->setGeometry(610,410,100,30);
-    saidaComboBox->insertItem(0,"Tela");
+    saidaComboBox->insertItem(0,"");
     saidaComboBox->insertItem(1,"Script");
-    saidaComboBox->insertItem(2,"Todos");
-
     QObject::connect(runButton, SIGNAL(clicked()), this, SLOT(slotRun()));
 }
 
@@ -1431,6 +1430,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                             if (ok)
                                             {
                                                 des->fd(parametro);
+                                                callScript("C0", parametro);
                                                 existe_comando = 1;
                                             }
                                             else
@@ -1439,6 +1439,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 if(okt_des)
                                                 {
                                                     des->fd(parametro);
+                                                    callScript("C0", parametro);
                                                     existe_comando = 1;
                                                 }
                                                 else
@@ -1454,6 +1455,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                             if (ok)
                                             {
                                                 des->bk(parametro);
+                                                callScript("C1", parametro);
                                                 existe_comando = 1;
                                             }
                                             else
@@ -1462,6 +1464,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 if(okt_des)
                                                 {
                                                     des->bk(parametro);
+                                                    callScript("C1", parametro);
                                                     existe_comando = 1;
                                                 }
                                                 else
@@ -1477,6 +1480,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                             if (ok)
                                             {
                                                 des->lt(parametro);
+                                                callScript("C2", parametro);
                                                 existe_comando = 1;
                                             }
                                             else
@@ -1485,6 +1489,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 if(okt_des)
                                                 {
                                                     des->lt(parametro);
+                                                    callScript("C2", parametro);
                                                     existe_comando = 1;
                                                 }
                                                 else
@@ -1500,6 +1505,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                             if (ok)
                                             {
                                                 des->rt(parametro);
+                                                callScript("C3", parametro);
                                                 existe_comando = 1;
                                             }
                                             else
@@ -1508,6 +1514,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 if(okt_des)
                                                 {
                                                     des->rt(parametro);
+                                                    callScript("C3", parametro);
                                                     existe_comando = 1;
                                                 }
                                                 else
@@ -1523,6 +1530,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                             if (ok)
                                             {
                                                 des->sx(parametro);
+                                                callScript("C4", parametro);
                                                 existe_comando = 1;
                                             }
                                             else
@@ -1531,6 +1539,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 if(okt_des)
                                                 {
                                                     des->sx(parametro);
+                                                    callScript("C4", parametro);
                                                     existe_comando = 1;
                                                 }
                                                 else
@@ -1546,6 +1555,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                             if (ok)
                                             {
                                                 des->sy(parametro);
+                                                callScript("C5", parametro);
                                                 existe_comando = 1;
                                             }
                                             else
@@ -1554,6 +1564,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                                                 if(okt_des)
                                                 {
                                                     des->sy(parametro);
+                                                    callScript("C5", parametro);
                                                     existe_comando = 1;
                                                 }
                                                 else
@@ -1790,5 +1801,15 @@ int KlogoTurtleApp::find_to(QString to_name)
 
     }
     return volta;
+}
 
+void KlogoTurtleApp::callScript(QString comando, int dist){
+    //valida se esta marcado para sair para o script
+    if( (saidaComboBox->currentIndex() == 1) || (saidaComboBox->currentIndex() == 2) ){
+        QProcess* proc = new QProcess();
+        proc->start("/home/marcus/workspace-qt/klogo-turtle-mobile/Scripts/saida.sh", QStringList() << comando << QString::number(dist));
+        proc->waitForFinished();
+        QString resp(proc->readAllStandardOutput());
+        MensagemTextEdit->append(resp);
+    }
 }

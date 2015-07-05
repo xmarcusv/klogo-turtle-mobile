@@ -1,8 +1,8 @@
-cmd_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := gcc -Wp,-MD,/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/.mos7705.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.8.3/include -I./arch/x86/include -Iarch/x86/include/generated  -Iinclude -I./arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I./include/uapi -Iinclude/generated/uapi -include ./include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -m64 -mno-80387 -mno-fp-ret-in-387 -mtune=generic -mno-red-zone -mcmodel=kernel -funit-at-a-time -maccumulate-outgoing-args -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_FXSAVEQ=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -fno-delete-null-pointer-checks -O2 --param=allow-store-data-races=0 -Wframe-larger-than=2048 -fstack-protector-strong -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fvar-tracking-assignments -g -pg -mfentry -DCC_USING_FENTRY -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO -I /lib/modules/3.18.9-100.fc20.x86_64/build/drivers/usb/serial  -DMODULE  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(mos7705)"  -D"KBUILD_MODNAME=KBUILD_STR(mos7705)" -c -o /home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o /home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.c
+cmd_/home/marcus/workspace-qt/klogo-turtle-mobile/Scripts/MCS7705/mos7705.o := gcc -Wp,-MD,/home/marcus/workspace-qt/klogo-turtle-mobile/Scripts/MCS7705/.mos7705.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/5.1.1/include -I./arch/x86/include -Iarch/x86/include/generated/uapi -Iarch/x86/include/generated  -Iinclude -I./arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I./include/uapi -Iinclude/generated/uapi -include ./include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -m64 -mno-80387 -mno-fp-ret-in-387 -mtune=generic -mno-red-zone -mcmodel=kernel -funit-at-a-time -maccumulate-outgoing-args -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_FXSAVEQ=1 -DCONFIG_AS_SSSE3=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -fno-delete-null-pointer-checks -O2 --param=allow-store-data-races=0 -Wframe-larger-than=2048 -fstack-protector-strong -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fvar-tracking-assignments -g -pg -mfentry -DCC_USING_FENTRY -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO -I /lib/modules/4.0.6-300.fc22.x86_64/build/drivers/usb/serial  -DMODULE  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(mos7705)"  -D"KBUILD_MODNAME=KBUILD_STR(mos7705)" -c -o /home/marcus/workspace-qt/klogo-turtle-mobile/Scripts/MCS7705/mos7705.o /home/marcus/workspace-qt/klogo-turtle-mobile/Scripts/MCS7705/mos7705.c
 
-source_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := /home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.c
+source_/home/marcus/workspace-qt/klogo-turtle-mobile/Scripts/MCS7705/mos7705.o := /home/marcus/workspace-qt/klogo-turtle-mobile/Scripts/MCS7705/mos7705.c
 
-deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
+deps_/home/marcus/workspace-qt/klogo-turtle-mobile/Scripts/MCS7705/mos7705.o := \
   include/generated/uapi/linux/version.h \
   include/linux/module.h \
     $(wildcard include/config/sysfs.h) \
@@ -16,6 +16,7 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
     $(wildcard include/config/tracing.h) \
     $(wildcard include/config/event/tracing.h) \
     $(wildcard include/config/ftrace/mcount/record.h) \
+    $(wildcard include/config/livepatch.h) \
     $(wildcard include/config/module/unload.h) \
     $(wildcard include/config/constructors.h) \
     $(wildcard include/config/debug/set/module/ronx.h) \
@@ -48,7 +49,7 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
   include/linux/compiler-gcc.h \
     $(wildcard include/config/arch/supports/optimized/inlining.h) \
     $(wildcard include/config/optimize/inlining.h) \
-  include/linux/compiler-gcc4.h \
+  include/linux/compiler-gcc5.h \
     $(wildcard include/config/arch/use/builtin/bswap.h) \
   arch/x86/include/asm/posix_types.h \
     $(wildcard include/config/x86/32.h) \
@@ -64,7 +65,7 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
     $(wildcard include/config/prove/locking.h) \
     $(wildcard include/config/panic/timeout.h) \
     $(wildcard include/config/ring/buffer.h) \
-  /usr/lib/gcc/x86_64-redhat-linux/4.8.3/include/stdarg.h \
+  /usr/lib/gcc/x86_64-redhat-linux/5.1.1/include/stdarg.h \
   include/linux/linkage.h \
   include/linux/stringify.h \
   include/linux/export.h \
@@ -92,6 +93,7 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
     $(wildcard include/config/physical/start.h) \
     $(wildcard include/config/physical/align.h) \
   arch/x86/include/asm/page_64_types.h \
+    $(wildcard include/config/kasan.h) \
     $(wildcard include/config/randomize/base.h) \
     $(wildcard include/config/randomize/base/max/offset.h) \
   arch/x86/include/uapi/asm/ptrace.h \
@@ -110,7 +112,6 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
   arch/x86/include/asm/pgtable_types.h \
     $(wildcard include/config/kmemcheck.h) \
     $(wildcard include/config/mem/soft/dirty.h) \
-    $(wildcard include/config/numa/balancing.h) \
     $(wildcard include/config/proc/fs.h) \
   arch/x86/include/asm/pgtable_64_types.h \
   arch/x86/include/asm/sparsemem.h \
@@ -131,6 +132,7 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
     $(wildcard include/config/x86/p6/nop.h) \
     $(wildcard include/config/matom.h) \
   arch/x86/include/asm/disabled-features.h \
+    $(wildcard include/config/x86/intel/mpx.h) \
   arch/x86/include/asm/rmwcc.h \
   arch/x86/include/asm/barrier.h \
     $(wildcard include/config/x86/ppro/fence.h) \
@@ -209,6 +211,7 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
   arch/x86/include/asm/page_64.h \
     $(wildcard include/config/debug/virtual.h) \
     $(wildcard include/config/flatmem.h) \
+    $(wildcard include/config/x86/vsyscall/emulation.h) \
   include/linux/range.h \
   include/asm-generic/memory_model.h \
     $(wildcard include/config/discontigmem.h) \
@@ -335,7 +338,9 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
     $(wildcard include/config/compaction.h) \
     $(wildcard include/config/have/memblock/node/map.h) \
     $(wildcard include/config/flat/node/mem/map.h) \
+    $(wildcard include/config/page/extension.h) \
     $(wildcard include/config/no/bootmem.h) \
+    $(wildcard include/config/numa/balancing.h) \
     $(wildcard include/config/have/memory/present.h) \
     $(wildcard include/config/have/memoryless/nodes.h) \
     $(wildcard include/config/need/node/memmap/size.h) \
@@ -375,9 +380,8 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
   include/linux/srcu.h \
   include/linux/rcupdate.h \
     $(wildcard include/config/tree/rcu.h) \
-    $(wildcard include/config/tree/preempt/rcu.h) \
-    $(wildcard include/config/rcu/trace.h) \
     $(wildcard include/config/preempt/rcu.h) \
+    $(wildcard include/config/rcu/trace.h) \
     $(wildcard include/config/rcu/stall/common.h) \
     $(wildcard include/config/rcu/user/qs.h) \
     $(wildcard include/config/rcu/nocb/cpu.h) \
@@ -447,7 +451,6 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
   include/linux/pm.h \
     $(wildcard include/config/vt/console/sleep.h) \
     $(wildcard include/config/pm.h) \
-    $(wildcard include/config/pm/runtime.h) \
     $(wildcard include/config/pm/clk.h) \
     $(wildcard include/config/pm/generic/domains.h) \
   arch/x86/include/asm/fixmap.h \
@@ -505,6 +508,7 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
     $(wildcard include/config/use/percpu/numa/node/id.h) \
     $(wildcard include/config/sched/smt.h) \
   include/linux/smp.h \
+    $(wildcard include/config/up/late/init.h) \
   include/linux/llist.h \
     $(wildcard include/config/arch/have/nmi/safe/cmpxchg.h) \
   include/linux/percpu.h \
@@ -528,15 +532,10 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
     $(wildcard include/config/have/cmpxchg/double.h) \
     $(wildcard include/config/have/aligned/struct/page.h) \
     $(wildcard include/config/transparent/hugepage.h) \
-    $(wildcard include/config/want/page/debug/flags.h) \
     $(wildcard include/config/aio.h) \
     $(wildcard include/config/mmu/notifier.h) \
   include/linux/auxvec.h \
   include/uapi/linux/auxvec.h \
-  include/linux/page-debug-flags.h \
-    $(wildcard include/config/page/poisoning.h) \
-    $(wildcard include/config/page/guard.h) \
-    $(wildcard include/config/page/debug/something/else.h) \
   include/linux/uprobes.h \
     $(wildcard include/config/uprobes.h) \
   arch/x86/include/asm/uprobes.h \
@@ -607,6 +606,7 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
     $(wildcard include/config/cgroup/sched.h) \
     $(wildcard include/config/blk/dev/io/trace.h) \
     $(wildcard include/config/compat/brk.h) \
+    $(wildcard include/config/memcg/kmem.h) \
     $(wildcard include/config/virt/cpu/accounting/gen.h) \
     $(wildcard include/config/sysvipc.h) \
     $(wildcard include/config/auditsyscall.h) \
@@ -716,10 +716,13 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
     $(wildcard include/config/x86/mce/threshold.h) \
     $(wildcard include/config/hyperv.h) \
   include/linux/irq.h \
+    $(wildcard include/config/irq/domain/hierarchy.h) \
     $(wildcard include/config/generic/pending/irq.h) \
     $(wildcard include/config/hardirqs/sw/resend.h) \
     $(wildcard include/config/generic/irq/legacy/alloc/hwirq.h) \
     $(wildcard include/config/generic/irq/legacy.h) \
+  include/linux/irqhandler.h \
+  include/linux/io.h \
   arch/x86/include/asm/irq.h \
   arch/x86/include/asm/irq_regs.h \
   include/linux/irqdesc.h \
@@ -742,21 +745,22 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
   include/linux/slab.h \
     $(wildcard include/config/slab/debug.h) \
     $(wildcard include/config/failslab.h) \
-    $(wildcard include/config/memcg/kmem.h) \
     $(wildcard include/config/slab.h) \
     $(wildcard include/config/slub.h) \
     $(wildcard include/config/slob.h) \
   include/linux/kmemleak.h \
     $(wildcard include/config/debug/kmemleak.h) \
+  include/linux/kasan.h \
+    $(wildcard include/config/kasan/shadow/offset.h) \
   include/linux/tty.h \
     $(wildcard include/config/tty.h) \
   include/linux/fs.h \
     $(wildcard include/config/fs/posix/acl.h) \
     $(wildcard include/config/ima.h) \
-    $(wildcard include/config/quota.h) \
     $(wildcard include/config/fsnotify.h) \
     $(wildcard include/config/file/locking.h) \
-    $(wildcard include/config/fs/xip.h) \
+    $(wildcard include/config/quota.h) \
+    $(wildcard include/config/fs/dax.h) \
     $(wildcard include/config/migration.h) \
   include/linux/kdev_t.h \
   include/uapi/linux/kdev_t.h \
@@ -768,10 +772,10 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
     $(wildcard include/config/arch/use/cmpxchg/lockref.h) \
   include/linux/path.h \
   include/linux/list_lru.h \
+  include/linux/shrinker.h \
   include/linux/radix-tree.h \
   include/linux/semaphore.h \
   include/uapi/linux/fiemap.h \
-  include/linux/shrinker.h \
   include/linux/migrate_mode.h \
   include/linux/percpu-rwsem.h \
   include/linux/blk_types.h \
@@ -865,6 +869,11 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
     $(wildcard include/config/hugetlbfs.h) \
   include/linux/debug_locks.h \
     $(wildcard include/config/debug/locking/api/selftests.h) \
+  include/linux/page_ext.h \
+    $(wildcard include/config/page/owner.h) \
+  include/linux/stacktrace.h \
+    $(wildcard include/config/stacktrace.h) \
+    $(wildcard include/config/user/stacktrace/support.h) \
   arch/x86/include/asm/pgtable.h \
     $(wildcard include/config/have/arch/soft/dirty.h) \
   arch/x86/include/asm/pgtable_64.h \
@@ -885,9 +894,9 @@ deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o := \
   arch/x86/include/generated/asm/scatterlist.h \
   include/asm-generic/scatterlist.h \
     $(wildcard include/config/need/sg/dma/length.h) \
-  /home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.h \
-  /home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705_16C50.h \
+  /home/marcus/workspace-qt/klogo-turtle-mobile/Scripts/MCS7705/mos7705.h \
+  /home/marcus/workspace-qt/klogo-turtle-mobile/Scripts/MCS7705/mos7705_16C50.h \
 
-/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o: $(deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o)
+/home/marcus/workspace-qt/klogo-turtle-mobile/Scripts/MCS7705/mos7705.o: $(deps_/home/marcus/workspace-qt/klogo-turtle-mobile/Scripts/MCS7705/mos7705.o)
 
-$(deps_/home/marcus/Downloads/MCS7705_Linux_Driver_V2.0.0_Source/mos7705.o):
+$(deps_/home/marcus/workspace-qt/klogo-turtle-mobile/Scripts/MCS7705/mos7705.o):

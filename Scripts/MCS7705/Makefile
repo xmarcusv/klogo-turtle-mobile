@@ -11,7 +11,7 @@ obj-m:=mos7705.o
 default:
 	$(RM) *.mod.c *.o *.ko .*.cmd *.symvers ioctl
 	$(MAKE) -C $(KDIR) $(EXTRA_CFLAGS) SUBDIRS=$(PWD) modules
-	gcc -pthread ioctl.c -o ioctl
+#	gcc -pthread ioctl.c -o ioctl
 
 clean:
 	rm -rf *.mod.c *.o *.ko .*.cmd *.symvers .tmp_versions *.order ioctl *~

@@ -102,6 +102,7 @@ private:
     bool maybeSave();
     void createLanguageMenu(void);
     void loadLanguage(const QString& rLanguage);
+    void callScript(QString comando, int dist);
 
 
     QMenu *fileMenu;
