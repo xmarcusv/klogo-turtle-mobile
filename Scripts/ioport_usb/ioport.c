@@ -173,11 +173,13 @@ void printValue(int valor)
 
 int doInbUsb(int argc, char *argv[])
 {
+	printf("metodo não implementado");
 	return 1;
 }
 
 int doVinbUsb(int argc, char *argv[])
 {
+	printf("metodo não implementado");
 	return 1;
 }
 
@@ -289,5 +291,6 @@ int doOutbUsb(int argc, char *argv[])
 
 int doXoutbUsb(int argc, char *argv[])
 {
+	printf("metodo não implementado");
 	return 1;
 }

@@ -1,0 +1,26 @@
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes.dex : \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/kde/necessitas/ministro/IMinistro$Stub$Proxy.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/kde/necessitas/ministro/IMinistro$Stub.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/kde/necessitas/ministro/IMinistro.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/kde/necessitas/ministro/IMinistroCallback$Stub$Proxy.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/kde/necessitas/ministro/IMinistroCallback$Stub.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/kde/necessitas/ministro/IMinistroCallback.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/example/klogoturtle/BuildConfig.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/example/klogoturtle/R$array.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/example/klogoturtle/R$attr.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/example/klogoturtle/R$layout.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/example/klogoturtle/R$string.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/example/klogoturtle/R.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/qt5/android/bindings/QtActivity$1.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/qt5/android/bindings/QtActivity$2.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/qt5/android/bindings/QtActivity$3$1$1.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/qt5/android/bindings/QtActivity$3$1.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/qt5/android/bindings/QtActivity$3.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/qt5/android/bindings/QtActivity$4.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/qt5/android/bindings/QtActivity$5.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/qt5/android/bindings/QtActivity$6.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/qt5/android/bindings/QtActivity.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/qt5/android/bindings/QtApplication$InvokeResult.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/classes/org/qtproject/qt5/android/bindings/QtApplication.class \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/dexedLibs/QtAndroid-bundled-645816c661d10b425d0f87b65377463a.jar \
+/Users/marcus/workspace-qt/klogo-turtle-mobile/Android_x86_release/android-build/bin/dexedLibs/QtAndroidAccessibility-bundled-a12d60f3fc4fb19331732648e9019718.jar \
