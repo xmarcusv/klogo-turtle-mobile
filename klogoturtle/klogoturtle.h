@@ -72,6 +72,7 @@ private slots:
     bool saveAs();
     void about();
     void print();
+    void setScript();
 
 private:
     Ui::KlogoTurtleApp *ui;
@@ -82,6 +83,7 @@ private:
     QString temp_comando_to;
     QString idioma_escolhido;
     QString m_langPath;
+    QString script;
 
     QTranslator m_translator; // contains the translations for this application
     QTranslator m_translatorQt; // contains the translations for qt
@@ -103,12 +105,15 @@ private:
     void createLanguageMenu(void);
     void loadLanguage(const QString& rLanguage);
     void callScript(QString comando, int dist);
+    void readSettings();
+    void writeSettings();
 
 
     QMenu *fileMenu;
     QMenu *editMenu;
     QMenu *helpMenu;
     QMenu *languageMenu;
+    QMenu *configMenu;
     QToolBar *fileToolBar;
     QToolBar *editToolBar;
     QAction *newAct;
@@ -122,6 +127,7 @@ private:
     QAction *aboutAct;
     QAction *aboutQtAct;
     QAction *printAsAct;
+    QAction *scriptAct;
 };
 
 #endif // KLOGOTURTLE_H

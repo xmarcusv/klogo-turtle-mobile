@@ -35,5 +35,5 @@ RESOURCES += \
     klogoturtle.qrc \
     languages.qrc
 
-TRANSLATIONS = languages/klogoturtle_pt_BR.ts  languages/klogoturtle_fs.ts
+TRANSLATIONS = languages/klogoturtle_pt_BR.ts  languages/klogoturtle_fr.ts languages/klogoturtle_it.ts languages/klogoturtle_de.ts
 

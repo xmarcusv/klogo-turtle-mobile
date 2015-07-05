@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="pt_BR">
+<TS version="2.0" language="it_IT">
 <context>
     <name></name>
     <message>
@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>file to open</source>
-        <translation>arquivo para abrir</translation>
+        <translation>file da aprire</translation>
     </message>
     <message>
         <source>Ready.</source>
@@ -17,19 +17,19 @@
     </message>
     <message>
         <source>Save &amp;Image...</source>
-        <translation>Salva &amp;Imagem</translation>
+        <translation>Salva &amp;Immagine...</translation>
     </message>
     <message>
         <source>English</source>
-        <translation>Inglês</translation>
+        <translation>Inglese</translation>
     </message>
     <message>
         <source>Portuguese</source>
-        <translation>Português</translation>
+        <translation>Portoghese</translation>
     </message>
     <message>
         <source>German</source>
-        <translation>Alemão</translation>
+        <translation>Germano</translation>
     </message>
     <message>
         <source>Italian</source>
@@ -37,211 +37,211 @@
     </message>
     <message>
         <source>French</source>
-        <translation>Francês</translation>
+        <translation>Francese</translation>
     </message>
     <message>
         <source>Commands:</source>
-        <translation>Comandos:</translation>
+        <translation>Comandi:</translation>
     </message>
     <message>
         <source>Messages:</source>
-        <translation>Mensagens:</translation>
+        <translation>Messaggi:</translation>
     </message>
     <message>
         <source>&amp;Run</source>
-        <translation>Executa&amp;r</translation>
+        <translation>&amp;Esegui</translation>
     </message>
     <message>
         <source>Creating new document...</source>
-        <translation>Criando um novo documento</translation>
+        <translation>Crea nuovo documento...</translation>
     </message>
     <message>
         <source>Opening file...</source>
-        <translation>Abrindo arquivo...</translation>
+        <translation>Apri file...</translation>
     </message>
     <message>
         <source>Loaded document.</source>
-        <translation>Documento lido.</translation>
+        <translation>Documento caricato.</translation>
     </message>
     <message>
         <source>Loading aborted.</source>
-        <translation>Leitura abortada.</translation>
+        <translation>Caricamento fallito.</translation>
     </message>
     <message>
         <source>Saving file...</source>
-        <translation>Salvando arquivo...</translation>
+        <translation>Salva file...</translation>
     </message>
     <message>
         <source>Could not write to file.</source>
-        <translation>Não posso escrever arquivo.</translation>
+        <translation>Impossibile scrivere nel file.</translation>
     </message>
     <message>
         <source>File saved.</source>
-        <translation>Arquivo salvo.</translation>
+        <translation>File salvato.</translation>
     </message>
     <message>
         <source>Saving file with a new filename...</source>
-        <translation>Salvando arquivo com um novo nome...</translation>
+        <translation>Salva file con un nuovo nome...</translation>
     </message>
     <message>
         <source>Saving aborted</source>
-        <translation>Salvamento abortado.</translation>
+        <translation>Salvataggio fallito</translation>
     </message>
     <message>
         <source>Printing...</source>
-        <translation>Imprimindo...</translation>
+        <translation>Stampa...</translation>
     </message>
     <message>
         <source>Printing completed.</source>
-        <translation>Impressão completa.</translation>
+        <translation>Stampa completata.</translation>
     </message>
     <message>
         <source>Printing aborted.</source>
-        <translation>Impressão abortada.</translation>
+        <translation>Stampa fallita.</translation>
     </message>
     <message>
         <source>Exiting...</source>
-        <translation>Saindo...</translation>
+        <translation>Esci...</translation>
     </message>
     <message>
         <source>REPEAT with invalid argument</source>
-        <translation>REPETE com argumento inválido</translation>
+        <translation>REPEAT con argomento non valido</translation>
     </message>
     <message>
         <source>REPEAT without END REPEAT</source>
-        <translation>REPETE sem FIM REPETE</translation>
+        <translation>REPEAT senza END REPEAT</translation>
     </message>
     <message>
         <source>Variable of MAKE is not correct</source>
-        <translation>Variável de FACA não é correta</translation>
+        <translation>Variabile di MAKE scorretta</translation>
     </message>
     <message>
         <source>Argument of MAKE is not number</source>
-        <translation>Argumento de FACA não é número</translation>
+        <translation>Argomento di MAKE non numerico</translation>
     </message>
     <message>
         <source>MAKE without =</source>
-        <translation>FACA sem =</translation>
+        <translation>MAKE senza =</translation>
     </message>
     <message>
         <source>Command variable of TO have length less than 4</source>
-        <translation>Variável de comando de DEFINE tem tamanho menor que 4</translation>
+        <translation>Variabile di TO con lunghezza inferiore a 4</translation>
     </message>
     <message>
         <source>TO without END TO</source>
-        <translation>DEFINE sem FIM DEFINE</translation>
+        <translation>TO senza END TO</translation>
     </message>
     <message>
         <source>Command ADD without = or +</source>
-        <translation>Comando SOMA sem = ou +</translation>
+        <translation>Comando ADD senza = o senza +</translation>
     </message>
     <message>
         <source>Variable of ADD is not number or not defined</source>
-        <translation>Variável de SOMA não é número ou não está definida</translation>
+        <translation>La variabile di ADD non  un numero o  indefinita</translation>
     </message>
     <message>
         <source>Variable of ADD is number</source>
-        <translation>Variável de SOMA é um número</translation>
+        <translation>La variabile di ADD  un numero</translation>
     </message>
     <message>
         <source>Command SUB without = or -</source>
-        <translation>Comando SUBTRAI sem = ou -</translation>
+        <translation>Comando SUB senza = o senza -</translation>
     </message>
     <message>
         <source>Variable of SUB is not number or not defined</source>
-        <translation>Variável de SUBTRAI não é número ou não está definida</translation>
+        <translation>La variabile di SUB non  un numero o  indefinita</translation>
     </message>
     <message>
         <source>Variable of SUB is number</source>
-        <translation>Variável de SUBTRAI é um número</translation>
+        <translation>La variabile di SUB  un numero</translation>
     </message>
     <message>
         <source>Command MUL without = or *</source>
-        <translation>Comando MULTIPLICA sem = ou *</translation>
+        <translation>Comando MUL senza = o senza *</translation>
     </message>
     <message>
         <source>Variable of MUL is not number or not defined</source>
-        <translation>Variável de MULTIPLICA não é número ou não está definida</translation>
+        <translation>La variabile di MUL non  un numero o  indefinita</translation>
     </message>
     <message>
         <source>Variable of MUL is number</source>
-        <translation>Variável de MULTIPLICA é um número</translation>
+        <translation>La variabile di MUL  un numero</translation>
     </message>
     <message>
         <source>Command DIV without = or /</source>
-        <translation>Comando DIVIDE sem = ou /</translation>
+        <translation>Comando DIV senza = o senza /</translation>
     </message>
     <message>
         <source>Variable of DIV is not number or not defined</source>
-        <translation>Variável de DIVIDE não é número ou não está definida</translation>
+        <translation>La variabile di DIV non  un numero o  indefinita</translation>
     </message>
     <message>
         <source>Variable of DIV is zero</source>
-        <translation>Variável de DIVIDE é zero</translation>
+        <translation>La variabile di DIV  zero</translation>
     </message>
     <message>
         <source>Variable of DIV is number</source>
-        <translation>Variável de DIVIDE é um número</translation>
+        <translation>La variabile di DIV  un numero</translation>
     </message>
     <message>
         <source>Command REM without = or /</source>
-        <translation>Comando RESTO sem = ou /</translation>
+        <translation>Comando REM senza = o senza /</translation>
     </message>
     <message>
         <source>Variable of REM is not number or not defined</source>
-        <translation>Variável de RESTO não é número ou não está definida</translation>
+        <translation>La variabile di REM non  un numero o  indefinita</translation>
     </message>
     <message>
         <source>Variable of REM is zero</source>
-        <translation>Variável de RESTO é zero</translation>
+        <translation>La variabile di REM  zero</translation>
     </message>
     <message>
         <source>Variable of REM is number</source>
-        <translation>Variável de RESTO é número</translation>
+        <translation>La variabile di REM  un numero</translation>
     </message>
     <message>
         <source>Variable of IF is not number or not defined</source>
-        <translation>Variável de SE não é número ou não está definida</translation>
+        <translation>La variabile di IF non  un numero o  indefinita</translation>
     </message>
     <message>
         <source>IF without operand</source>
-        <translation>SE sem operando</translation>
+        <translation>IF senza operando</translation>
     </message>
     <message>
         <source>IF without END IF</source>
-        <translation>SE sem FIM SE</translation>
+        <translation>IF senza END IF</translation>
     </message>
     <message>
         <source>FD with invalid argument</source>
-        <translation>FRENTE com argumento inválido</translation>
+        <translation>AVANTI con argomento non valido</translation>
     </message>
     <message>
         <source>BK with invalid argument</source>
-        <translation>ATRAS com argumento inválido</translation>
+        <translation>INDIETRO con argomento non valido</translation>
     </message>
     <message>
         <source>LT with invalid argument</source>
-        <translation>ESQUERDA com argumento inválido</translation>
+        <translation>SINISTRA con argomento non valido</translation>
     </message>
     <message>
         <source>RT with invalid argument</source>
-        <translation>DIREITA com argumento inválido</translation>
+        <translation>DESTRA con argomento non valido</translation>
     </message>
     <message>
         <source>SX with invalid argument</source>
-        <translation>X com argumento inválido</translation>
+        <translation>ASSEX con argomento non valido</translation>
     </message>
     <message>
         <source>SY with invalid argument</source>
-        <translation>Y com argumento inválido</translation>
+        <translation>ASSEY con argomento non valido</translation>
     </message>
     <message>
         <source>Invalid command:</source>
-        <translation>Comando inválido</translation>
+        <translation>Comando non valido:</translation>
     </message>
     <message>
         <source>Desenho</source>
-        <translation>Desenho</translation>
+        <translation>Disegno</translation>
     </message>
     <message>
         <source>KlogoturtleApp</source>
@@ -249,85 +249,23 @@
     </message>
     <message>
         <source>&amp;Language</source>
-        <translation>&amp;Língua</translation>
+        <translation>&amp;Lingua</translation>
     </message>
     <message>
         <source>Main</source>
-        <translation>Principal</translation>
+        <translation>Principale</translation>
     </message>
     <message>
         <source>_: NAME OF TRANSLATORS
 Your names</source>
-        <translation>Euclides Lourenço Chuma</translation>
+        <translation>NOMI DEI TRADUTTORI
+Andrea Centomo</translation>
     </message>
     <message>
         <source>_: EMAIL OF TRANSLATORS
 Your emails</source>
-        <translation>euclideschuma@yahoo.com.br</translation>
-    </message>
-    <message>
-        <source>Creates a new document</source>
-        <translation type="obsolete">Cria um novo documento</translation>
-    </message>
-    <message>
-        <source>Opens an existing document</source>
-        <translation type="obsolete">Abre um documento existente</translation>
-    </message>
-    <message>
-        <source>Saves the actual document</source>
-        <translation type="obsolete">Salva o documento atual</translation>
-    </message>
-    <message>
-        <source>Saves the actual document as...</source>
-        <translation type="obsolete">Salva o documento atual como...</translation>
-    </message>
-    <message>
-        <source>Prints out the actual document</source>
-        <translation type="obsolete">Imprime o documento atual</translation>
-    </message>
-    <message>
-        <source>Quits the application</source>
-        <translation type="obsolete">Sai do aplicativo</translation>
-    </message>
-    <message>
-        <source>Cuts the selected section and puts it to the clipboard</source>
-        <translation type="obsolete">Corta a seleção e coloca no clipboard</translation>
-    </message>
-    <message>
-        <source>Copies the selected section to the clipboard</source>
-        <translation type="obsolete">Copia a seleção do clipboard</translation>
-    </message>
-    <message>
-        <source>Pastes the clipboard contents to actual position</source>
-        <translation type="obsolete">Cola o clipboard na posição atual</translation>
-    </message>
-    <message>
-        <source>Enables/disables the toolbar</source>
-        <translation type="obsolete">Habilita/desabilita barra de ferramentas</translation>
-    </message>
-    <message>
-        <source>Enables/disables the statusbar</source>
-        <translation type="obsolete">Habilita/Desabilita barra de status</translation>
-    </message>
-    <message>
-        <source>Save the actual image</source>
-        <translation type="obsolete">Salva a imagem atual</translation>
-    </message>
-    <message>
-        <source>Toggling toolbar...</source>
-        <translation type="obsolete">Mudando barra de ferramentas...</translation>
-    </message>
-    <message>
-        <source>Toggle the statusbar...</source>
-        <translation type="obsolete">Mudando barra de status...</translation>
-    </message>
-    <message>
-        <source>KLogo-turtle</source>
-        <translation type="obsolete">KLogo-Turtle</translation>
-    </message>
-    <message>
-        <source>C&amp;ustom</source>
-        <translation type="obsolete">C&amp;ustom</translation>
+        <translation>EMAIL DEI TRADUTTORI
+acentomo@ofset.org</translation>
     </message>
 </context>
 <context>
@@ -340,17 +278,17 @@ Your emails</source>
     <message>
         <location filename="../klogoturtle.cpp" line="99"/>
         <source>Commands:</source>
-        <translation>Comandos:</translation>
+        <translation>Comandi:</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="103"/>
         <source>Messages:</source>
-        <translation>Mensagens:</translation>
+        <translation>Messaggi:</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="143"/>
         <source>Creating new document...</source>
-        <translation>Criando um novo documento...</translation>
+        <translation>Crea nuovo documento...</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="147"/>
@@ -363,32 +301,32 @@ Your emails</source>
     <message>
         <location filename="../klogoturtle.cpp" line="154"/>
         <source>Opening file...</source>
-        <translation>Abrindo arquivo...</translation>
+        <translation>Apri file...</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="164"/>
         <source>Loaded document.</source>
-        <translation>Documento lido.</translation>
+        <translation>Documento caricato.</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="168"/>
         <source>Loading aborted.</source>
-        <translation>Leitura abortada.</translation>
+        <translation>Caricamento fallito.</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="177"/>
         <source>Saving file...</source>
-        <translation>Salvando arquivo...</translation>
+        <translation>Salva file...</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="187"/>
         <source>Could not write to file.</source>
-        <translation>Não posso escrever arquivo.</translation>
+        <translation>Impossibile scrivere nel file.</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="195"/>
         <source>File saved.</source>
-        <translation>Arquivo salvo.</translation>
+        <translation>File salvato.</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="217"/>
@@ -416,7 +354,7 @@ Do you want to save your changes?</source>
     <message>
         <location filename="../klogoturtle.cpp" line="240"/>
         <source>Printing...</source>
-        <translation>Imprimindo...</translation>
+        <translation>Stampa...</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="246"/>
@@ -426,12 +364,12 @@ Do you want to save your changes?</source>
     <message>
         <location filename="../klogoturtle.cpp" line="271"/>
         <source>Printing completed.</source>
-        <translation>Impressão completa.</translation>
+        <translation>Stampa completata.</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="275"/>
         <source>Printing aborted.</source>
-        <translation>Impressão abortada.</translation>
+        <translation>Stampa fallita.</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="283"/>
@@ -557,7 +495,7 @@ Do you want to save your changes?</source>
     <message>
         <location filename="../klogoturtle.cpp" line="447"/>
         <source>&amp;Language</source>
-        <translation>&amp;Língua</translation>
+        <translation>&amp;Lingua</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="452"/>
@@ -582,127 +520,127 @@ Do you want to save your changes?</source>
     <message>
         <location filename="../klogoturtle.cpp" line="701"/>
         <source>REPEAT with invalid argument</source>
-        <translation>REPETE com argumento inválido</translation>
+        <translation>REPEAT con argomento non valido</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="708"/>
         <source>REPEAT without END REPEAT</source>
-        <translation>REPETE sem FIM REPETE</translation>
+        <translation>REPEAT senza END REPEAT</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="744"/>
         <source>Variable of MAKE is not correct</source>
-        <translation>Variável de FACA não é correta</translation>
+        <translation>Variabile di MAKE scorretta</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="756"/>
         <source>Argument of MAKE is not number</source>
-        <translation>Argumento de FACA não é número</translation>
+        <translation>Argomento di MAKE non numerico</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="763"/>
         <source>MAKE without =</source>
-        <translation>FACA sem =</translation>
+        <translation>MAKE senza =</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="834"/>
         <source>Command variable of TO have length less than 4</source>
-        <translation>Variável de comando de DEFINE tem tamanho menor que 4</translation>
+        <translation>Variabile di TO con lunghezza inferiore a 4</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="866"/>
         <source>TO without END TO</source>
-        <translation>DEFINE sem FIM DEFINE</translation>
+        <translation>TO senza END TO</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="886"/>
         <source>Command ADD without = or +</source>
-        <translation>Comando SOMA sem = ou +</translation>
+        <translation>Comando ADD senza = o senza +</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="904"/>
         <location filename="../klogoturtle.cpp" line="918"/>
         <source>Variable of ADD is not number or not defined</source>
-        <translation>Variável de SOMA não é número ou não está definida</translation>
+        <translation>La variabile di ADD non  un numero o  indefinita</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="928"/>
         <source>Variable of ADD is number</source>
-        <translation>Variável de SOMA é um número</translation>
+        <translation>La variabile di ADD  un numero</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="947"/>
         <source>Command SUB without = or -</source>
-        <translation>Comando SUBTRAI sem = ou -</translation>
+        <translation>Comando SUB senza = o senza -</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="965"/>
         <location filename="../klogoturtle.cpp" line="979"/>
         <source>Variable of SUB is not number or not defined</source>
-        <translation>Variável de SUBTRAI não é número ou não está definida</translation>
+        <translation>La variabile di SUB non  un numero o  indefinita</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="989"/>
         <source>Variable of SUB is number</source>
-        <translation>Variável de SUBTRAI é um número</translation>
+        <translation>La variabile di SUB  un numero</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1009"/>
         <source>Command MUL without = or *</source>
-        <translation>Comando MULTIPLICA sem = ou *</translation>
+        <translation>Comando MUL senza = o senza *</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1027"/>
         <location filename="../klogoturtle.cpp" line="1041"/>
         <source>Variable of MUL is not number or not defined</source>
-        <translation>Variável de MULTIPLICA não é número ou não está definida</translation>
+        <translation>La variabile di MUL non  un numero o  indefinita</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1051"/>
         <source>Variable of MUL is number</source>
-        <translation>Variável de MULTIPLICA é um número</translation>
+        <translation>La variabile di MUL  un numero</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1071"/>
         <source>Command DIV without = or /</source>
-        <translation>Comando DIVIDE sem = ou /</translation>
+        <translation>Comando DIV senza = o senza /</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1089"/>
         <location filename="../klogoturtle.cpp" line="1108"/>
         <source>Variable of DIV is not number or not defined</source>
-        <translation>Variável de DIVIDE não é número ou não está definida</translation>
+        <translation>La variabile di DIV non  un numero o  indefinita</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1096"/>
         <source>Variable of DIV is zero</source>
-        <translation>Variável de DIVIDE é zero</translation>
+        <translation>La variabile di DIV  zero</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1118"/>
         <source>Variable of DIV is number</source>
-        <translation>Variável de DIVIDE é um número</translation>
+        <translation>La variabile di DIV  un numero</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1139"/>
         <source>Command REM without = or /</source>
-        <translation>Comando RESTO sem = ou /</translation>
+        <translation>Comando REM senza = o senza /</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1157"/>
         <location filename="../klogoturtle.cpp" line="1176"/>
         <source>Variable of REM is not number or not defined</source>
-        <translation>Variável de RESTO não é número ou não está definida</translation>
+        <translation>La variabile di REM non  un numero o  indefinita</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1164"/>
         <source>Variable of REM is zero</source>
-        <translation>Variável de RESTO é zero</translation>
+        <translation>La variabile di REM  zero</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1186"/>
         <source>Variable of REM is number</source>
-        <translation>Variável de RESTO é número</translation>
+        <translation>La variabile di REM  un numero</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1245"/>
@@ -714,52 +652,52 @@ Do you want to save your changes?</source>
         <location filename="../klogoturtle.cpp" line="1381"/>
         <location filename="../klogoturtle.cpp" line="1395"/>
         <source>Variable of IF is not number or not defined</source>
-        <translation>Variável de SE não é número ou não está definida</translation>
+        <translation>La variabile di IF non  un numero o  indefinita</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1413"/>
         <source>IF without operand</source>
-        <translation>SE sem operando</translation>
+        <translation>IF senza operando</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1425"/>
         <source>IF without END IF</source>
-        <translation>SE sem FIM SE</translation>
+        <translation>IF senza END IF</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1461"/>
         <source>FD with invalid argument</source>
-        <translation>FRENTE com argumento inválido</translation>
+        <translation>AVANTI con argomento non valido</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1486"/>
         <source>BK with invalid argument</source>
-        <translation>ATRAS com argumento inválido</translation>
+        <translation>INDIETRO con argomento non valido</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1511"/>
         <source>LT with invalid argument</source>
-        <translation>ESQUERDA com argumento inválido</translation>
+        <translation>SINISTRA con argomento non valido</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1536"/>
         <source>RT with invalid argument</source>
-        <translation>DIREITA com argumento inválido</translation>
+        <translation>DESTRA con argomento non valido</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1561"/>
         <source>SX with invalid argument</source>
-        <translation>X com argumento inválido</translation>
+        <translation>ASSEX con argomento non valido</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1586"/>
         <source>SY with invalid argument</source>
-        <translation>Y com argumento inválido</translation>
+        <translation>ASSEY con argomento non valido</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="1671"/>
         <source>Invalid command:</source>
-        <translation>Comando inválido:</translation>
+        <translation>Comando non valido:</translation>
     </message>
 </context>
 <context>

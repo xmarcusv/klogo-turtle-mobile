@@ -15,6 +15,8 @@
 #include <QStatusBar>
 #include <QMenuBar>
 #include <QProcess>
+#include <QSettings>
+#include <QInputDialog>
 
 //That's for the StatusBar
 //If you define more, it will allow you to have several items in the StatusBar
@@ -29,7 +31,7 @@ KlogoTurtleApp::KlogoTurtleApp(QWidget *parent) :
     qApp->installTranslator(&m_translatorQt);
     ui->setupUi(this);
 
-    idioma_escolhido = "pt_BR";
+    readSettings();
 
     ///////////////////////////////////////////////////////////////////
     // call inits to invoke all other construction parts
@@ -49,7 +51,7 @@ KlogoTurtleApp::KlogoTurtleApp(QWidget *parent) :
 void KlogoTurtleApp::closeEvent(QCloseEvent *event)
 {
     if (maybeSave()) {
-        //writeSettings();
+        writeSettings();
         event->accept();
     } else {
         event->ignore();
@@ -119,6 +121,21 @@ void KlogoTurtleApp::initView()
     saidaComboBox->insertItem(0,"");
     saidaComboBox->insertItem(1,"Script");
     QObject::connect(runButton, SIGNAL(clicked()), this, SLOT(slotRun()));
+}
+
+void KlogoTurtleApp::readSettings()
+{
+    QSettings settings("klogo", "klogo-turtle-mogile");
+    script = settings.value("script", "").toString();
+    idioma_escolhido = settings.value("language", "en").toString();
+
+}
+
+void KlogoTurtleApp::writeSettings()
+{
+    QSettings settings("klogo", "klogo-turtle-mogile");
+    settings.setValue("script", script);
+    settings.setValue("language", idioma_escolhido);
 }
 
 void KlogoTurtleApp::newFile()
@@ -198,10 +215,8 @@ bool KlogoTurtleApp::saveAs()
 
 void KlogoTurtleApp::about()
 {
-   QMessageBox::about(this, tr("About Application"),
-            tr("The <b>Application</b> example demonstrates how to "
-               "write modern GUI applications using Qt, with a menu bar, "
-               "toolbars, and a status bar."));
+   QMessageBox::about(this, tr("KLogo-Turtle 0.7"),
+            tr("2003, Ecluides Lourenco Chum \n 2015, Marcus Vinicius Corrêa Barcelos \n https://github.com/xmarcusv/klogo-turtle-mobile"));
 }
 
 bool KlogoTurtleApp::maybeSave()
@@ -262,6 +277,16 @@ void KlogoTurtleApp::print()
     }
 
     statusBar()->showMessage(tr("Ready."), ID_STATUS_MSG);
+}
+
+void KlogoTurtleApp::setScript()
+{
+    bool ok;
+    QString text = QInputDialog::getText(this, tr("Endereço do Script"),
+                                         tr("Digita o endereço completo do script:"), QLineEdit::Normal,
+                                         script, &ok);
+    if (ok)
+        script = text;
 }
 
 void KlogoTurtleApp::createActions()
@@ -331,6 +356,11 @@ void KlogoTurtleApp::createActions()
             cutAct, SLOT(setEnabled(bool)));
     connect(ComandoTextEdit, SIGNAL(copyAvailable(bool)),
             copyAct, SLOT(setEnabled(bool)));
+
+
+    scriptAct = new QAction(tr("&Caminho do Script"), this);
+    scriptAct->setStatusTip(tr("Setar o caminho do script"));
+    connect(scriptAct, SIGNAL(triggered()), this, SLOT(setScript()));
 }
 
 void KlogoTurtleApp::createLanguageMenu(void)
@@ -341,7 +371,7 @@ void KlogoTurtleApp::createLanguageMenu(void)
     connect(langGroup, SIGNAL (triggered(QAction *)), this, SLOT (slotLanguageChanged(QAction *)));
 
     // format systems language
-    QString defaultLocale = QLocale::system().name(); // e.g. "de_DE"
+    //QString defaultLocale = QLocale::system().name(); // e.g. "de_DE"
     //defaultLocale.truncate(defaultLocale.lastIndexOf('_')); // e.g. "de"
 
     QDir dir(":/languages");
@@ -363,7 +393,7 @@ void KlogoTurtleApp::createLanguageMenu(void)
         langGroup->addAction(action);
 
         // set default translators and language checked
-        if (defaultLocale == locale)
+        if (idioma_escolhido == locale)
         {
             action->setChecked(true);
         }
@@ -430,7 +460,11 @@ void KlogoTurtleApp::createMenus()
     editMenu->addAction(copyAct);
     editMenu->addAction(pasteAct);
 
-    languageMenu = menuBar()->addMenu(tr("&Language"));
+    configMenu = menuBar()->addMenu(tr("&Settings"));
+    configMenu->addAction(scriptAct);
+    configMenu->addSeparator();
+    languageMenu = configMenu->addMenu(tr("&Language"));
+
     createLanguageMenu();
 
     menuBar()->addSeparator();
@@ -491,7 +525,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
     comando.replace(" ", "");
 
     //Commands in english
-    if(idioma_escolhido == "ingles")
+    if(idioma_escolhido == "ingles" || idioma_escolhido == "en")
     {
         if(comando.startsWith("FORWARD")) comando.replace("FORWARD","FD");
         if(comando.startsWith("BACKWARD")) comando.replace("BACKWARD","BK");
@@ -515,7 +549,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
 
 
     //Commands in portuguese
-    if(idioma_escolhido == "portugues")
+    if(idioma_escolhido == "portugues" || idioma_escolhido == "pt_BR")
     {
         if(comando.startsWith("FRENTE")) comando.replace("FRENTE","FD");
         if(comando.startsWith("ATRAS")) comando.replace("ATRAS","BK");
@@ -555,7 +589,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
     }
 
 
-    if(idioma_escolhido == "alemao")
+    if(idioma_escolhido == "alemao" || idioma_escolhido == "de")
     {
         if(comando.startsWith("VORWAERTS")) comando.replace("VORWAERTS","FD");
         if(comando.startsWith("ZURUECK")) comando.replace("ZURUECK","BK");
@@ -586,7 +620,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
         if(comando.startsWith("NEU")) comando.replace("NEU","NEW");
     }
 
-    if(idioma_escolhido == "italiano")
+    if(idioma_escolhido == "italiano" || idioma_escolhido == "it")
     {
         if(comando.startsWith("AVANTI")) comando.replace("AVANTI","FD");
         if(comando.startsWith("INDIETRO")) comando.replace("INDIETRO","BK");
@@ -617,7 +651,7 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
         if(comando.startsWith("CONTENUTO")) comando.replace("CONTENUTO","SHOW");
     }
 
-    if(idioma_escolhido == "frances")
+    if(idioma_escolhido == "frances" || idioma_escolhido == "fs")
     {
         if(comando.startsWith("AVANCE")) comando.replace("AVANCE","FD");
         if(comando.startsWith("RECULE")) comando.replace("RECULE","BK");
@@ -1807,7 +1841,7 @@ void KlogoTurtleApp::callScript(QString comando, int dist){
     //valida se esta marcado para sair para o script
     if( (saidaComboBox->currentIndex() == 1) || (saidaComboBox->currentIndex() == 2) ){
         QProcess* proc = new QProcess();
-        proc->start("/home/marcus/workspace-qt/klogo-turtle-mobile/Scripts/saida.sh", QStringList() << comando << QString::number(dist));
+        proc->start(script, QStringList() << comando << QString::number(dist));
         proc->waitForFinished();
         QString resp(proc->readAllStandardOutput());
         MensagemTextEdit->append(resp);

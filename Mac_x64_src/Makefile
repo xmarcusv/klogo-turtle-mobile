@@ -176,6 +176,7 @@ DIST          = ../../../Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.4/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/5.4/clang_64/mkspecs/features/spec_post.prf \
+		../klogoturtle/.qmake.stash \
 		../../../Qt/5.4/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/default_pre.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -352,6 +353,7 @@ Makefile: ../klogoturtle/klogoturtle.pro ../../../Qt/5.4/clang_64/mkspecs/macx-c
 		../../../Qt/5.4/clang_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.4/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/5.4/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/5.4/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/default_pre.prf \
 		../../../Qt/5.4/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -487,6 +489,7 @@ Makefile: ../klogoturtle/klogoturtle.pro ../../../Qt/5.4/clang_64/mkspecs/macx-c
 ../../../Qt/5.4/clang_64/mkspecs/features/qt_config.prf:
 ../../../Qt/5.4/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../../Qt/5.4/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/5.4/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.4/clang_64/mkspecs/features/default_pre.prf:
 ../../../Qt/5.4/clang_64/mkspecs/features/mac/default_pre.prf:
@@ -547,7 +550,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents ../klogoturtle/klogoturtle.h ../klogoturtle/desenho.h ../klogoturtle/klogoturtlemobileapp.h ../klogoturtle/mesamobile.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../klogoturtle/main.cpp ../klogoturtle/klogoturtle.cpp ../klogoturtle/desenho.cpp ../klogoturtle/klogoturtlemobileapp.cpp ../klogoturtle/mesamobile.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../klogoturtle/klogoturtle.ui ../klogoturtle/klogoturtlemobileapp.ui ../klogoturtle/mesamobile.ui $(DISTDIR)/
-	$(COPY_FILE) --parents languages/klogoturtle_pt_BR.ts languages/klogoturtle_fs.ts $(DISTDIR)/
+	$(COPY_FILE) --parents languages/klogoturtle_pt_BR.ts languages/klogoturtle_fr.ts languages/klogoturtle_it.ts languages/klogoturtle_de.ts $(DISTDIR)/
 
 
 clean:compiler_clean 
@@ -586,7 +589,9 @@ qrc_klogoturtle.cpp: ../klogoturtle/klogoturtle.qrc \
 
 qrc_languages.cpp: ../klogoturtle/languages.qrc \
 		../klogoturtle/languages/klogoturtle_pt_BR.qm \
-		../klogoturtle/languages/klogoturtle_fs.qm
+		../klogoturtle/languages/klogoturtle_fr.qm \
+		../klogoturtle/languages/klogoturtle_de.qm \
+		../klogoturtle/languages/klogoturtle_it.qm
 	/Users/marcus/Qt/5.4/clang_64/bin/rcc -name languages ../klogoturtle/languages.qrc -o qrc_languages.cpp
 
 compiler_moc_header_make_all: moc_klogoturtle.cpp moc_desenho.cpp moc_klogoturtlemobileapp.cpp moc_mesamobile.cpp
@@ -770,7 +775,11 @@ klogoturtle.o: ../klogoturtle/klogoturtle.cpp ../klogoturtle/klogoturtle.h \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QStatusBar \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qstatusbar.h \
 		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMenuBar \
-		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmenubar.h
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmenubar.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QProcess \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qprocess.h \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QSettings \
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qsettings.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o klogoturtle.o ../klogoturtle/klogoturtle.cpp
 
 desenho.o: ../klogoturtle/desenho.cpp ../klogoturtle/desenho.h \
