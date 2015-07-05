@@ -16,6 +16,7 @@
 #include <errno.h>
 #include <sys/io.h>
 #include "strnum.h"
+#include <dirent.h>
 
 #define SET_DATA_DIR_IN		0x20
 #define SET_DATA_DIR_OUT	0x0F
@@ -186,7 +187,6 @@ int doOutbUsb(int argc, char *argv[])
 	{
 		
 		int valor, devfd, ret;
-		unsigned char	write_value;
 		char* puerto;
 
 		puerto = argv[1];
@@ -199,7 +199,10 @@ int doOutbUsb(int argc, char *argv[])
 		printf("\n");
 
 		devfd = open(puerto, O_RDWR);
-		printf("open resp %d \n",devfd);
+		if (devfd == -1) {
+			printf("Não foi possivel acessar %s, verifique se o endereço está correto e se possui permissão.\n", puerto);
+			return 0;
+		}
 
 		ret = ioctl(devfd, PPCLAIM);
 		if (ret < 0) {
@@ -222,9 +225,65 @@ int doOutbUsb(int argc, char *argv[])
 		printf("close %d \n",ret);
 
 		return 0;
+	}else if(argc == 2 && isNumber(argv[1])){
+		DIR *d;
+		struct dirent *dir;
+		d = opendir("/dev");
+		if(d)
+		{ 	
+			while((dir = readdir(d)) != NULL)
+			{
+				if(strstr(dir->d_name,"parport") != NULL){		
+					int valor, devfd, ret;			
+					char* puerto;
+
+					puerto = malloc(strlen(dir->d_name)+1+5);
+					strcpy(puerto,"/dev/");
+					strcat(puerto,dir->d_name);					
+					
+					valor = stringToInt(argv[1]);
+
+					printf("outb %s: ", puerto);
+
+					printValue(valor);
+
+					printf("\n");
+
+					devfd = open(puerto, O_RDWR);
+					if (devfd == -1) {
+						printf("Não foi possivel acessar %s, verifique se o endereço está correto e se possui permissão.\n", puerto);
+						continue;
+					}
+
+					ret = ioctl(devfd, PPCLAIM);
+					if (ret < 0) {
+						printf("\nret = %d, errno = %d, Ocorreu um erro ao reinvidicar acesso a porta!!\n\r", ret, errno);
+						close(devfd);
+						continue;
+					}
+
+					int	data_direction = 0; //Output mode
+					ret = ioctl(devfd, PPDATADIR, &data_direction);		
+
+					ret = ioctl(devfd, PPWDATA, &valor);
+					if (ret < 0) {
+						printf("\n---ret = %d, errno = %d, Erro ao acessar o registro da porta!!\n\r", ret, errno);
+						continue;
+					}
+
+					ret =  ioctl(devfd, PPRELEASE);
+					close(devfd);
+					printf("close %d \n",ret);
+
+					return 0;
+				}				
+			}
+			printf("Nenhum dispositivo encontrador, utilizar: outbusb <numero da porta> <valor>\n");
+			return 1;
+		}
 	}
 	
-	printf("modo de uso: outb <numero da porta> <valor>\n");
+	printf("modo de uso: outbusb <numero da porta> <valor>\n");
 	return 1;
 }
 
