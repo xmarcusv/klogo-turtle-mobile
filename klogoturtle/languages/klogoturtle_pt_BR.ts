@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>&amp;Run</source>
-        <translation>Executa&amp;r</translation>
+        <translation>&amp;Executar</translation>
     </message>
     <message>
         <source>Creating new document...</source>
@@ -338,426 +338,452 @@ Your emails</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="99"/>
+        <location filename="../klogoturtle.cpp" line="103"/>
         <source>Commands:</source>
         <translation>Comandos:</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="103"/>
+        <location filename="../klogoturtle.cpp" line="107"/>
         <source>Messages:</source>
         <translation>Mensagens:</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="143"/>
+        <location filename="../klogoturtle.cpp" line="147"/>
         <source>Creating new document...</source>
         <translation>Criando um novo documento...</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="147"/>
-        <location filename="../klogoturtle.cpp" line="171"/>
-        <location filename="../klogoturtle.cpp" line="196"/>
-        <location filename="../klogoturtle.cpp" line="278"/>
+        <location filename="../klogoturtle.cpp" line="151"/>
+        <location filename="../klogoturtle.cpp" line="175"/>
+        <location filename="../klogoturtle.cpp" line="200"/>
+        <location filename="../klogoturtle.cpp" line="282"/>
         <source>Ready.</source>
         <translation>Pronto.</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="154"/>
+        <location filename="../klogoturtle.cpp" line="158"/>
         <source>Opening file...</source>
         <translation>Abrindo arquivo...</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="164"/>
+        <location filename="../klogoturtle.cpp" line="168"/>
         <source>Loaded document.</source>
         <translation>Documento lido.</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="168"/>
+        <location filename="../klogoturtle.cpp" line="172"/>
         <source>Loading aborted.</source>
         <translation>Leitura abortada.</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="177"/>
+        <location filename="../klogoturtle.cpp" line="181"/>
         <source>Saving file...</source>
         <translation>Salvando arquivo...</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="187"/>
+        <location filename="../klogoturtle.cpp" line="191"/>
         <source>Could not write to file.</source>
         <translation>Não posso escrever arquivo.</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="195"/>
+        <location filename="../klogoturtle.cpp" line="199"/>
         <source>File saved.</source>
         <translation>Arquivo salvo.</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="217"/>
+        <location filename="../klogoturtle.cpp" line="221"/>
         <source>KLogo-Turtle 0.7</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="218"/>
+        <location filename="../klogoturtle.cpp" line="222"/>
         <source>2003, Ecluides Lourenco Chum 
  2015, Marcus Vinicius Corrêa Barcelos 
  https://github.com/xmarcusv/klogo-turtle-mobile</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="225"/>
+        <location filename="../klogoturtle.cpp" line="229"/>
         <source>Application</source>
-        <translation></translation>
+        <translation>Aplicação</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="226"/>
+        <location filename="../klogoturtle.cpp" line="230"/>
         <source>The document has been modified.
 Do you want to save your changes?</source>
-        <translation></translation>
+        <translation>O documento foi alterado.
+Deseja salva as alterações?</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="240"/>
+        <location filename="../klogoturtle.cpp" line="244"/>
         <source>Printing...</source>
         <translation>Imprimindo...</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="246"/>
+        <location filename="../klogoturtle.cpp" line="250"/>
         <source>Print Document</source>
-        <translation></translation>
+        <translation>Imprimir Documento</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="271"/>
+        <location filename="../klogoturtle.cpp" line="275"/>
         <source>Printing completed.</source>
         <translation>Impressão completa.</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="275"/>
+        <location filename="../klogoturtle.cpp" line="279"/>
         <source>Printing aborted.</source>
         <translation>Impressão abortada.</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="283"/>
-        <source>&amp;New</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../klogoturtle.cpp" line="285"/>
-        <source>Create a new file</source>
-        <translation></translation>
+        <location filename="../klogoturtle.cpp" line="288"/>
+        <source>Endereço do Script</source>
+        <translation>Endereço do Script</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="289"/>
-        <source>&amp;Open...</source>
-        <translation></translation>
+        <source>Digita o endereço completo do script:</source>
+        <translation>Digite o endereço completo do script</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="291"/>
-        <source>Open an existing file</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../klogoturtle.cpp" line="294"/>
-        <source>&amp;Save</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../klogoturtle.cpp" line="296"/>
-        <source>Save the document to disk</source>
-        <translation></translation>
+        <location filename="../klogoturtle.cpp" line="297"/>
+        <source>&amp;New</source>
+        <translation>&amp;Novo</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="299"/>
+        <source>Create a new file</source>
+        <translation>Criando um novo arquivo</translation>
+    </message>
+    <message>
+        <location filename="../klogoturtle.cpp" line="303"/>
+        <source>&amp;Open...</source>
+        <translation>&amp;Abrir...</translation>
+    </message>
+    <message>
+        <location filename="../klogoturtle.cpp" line="305"/>
+        <source>Open an existing file</source>
+        <translation>Abrir arquivo existente</translation>
+    </message>
+    <message>
+        <location filename="../klogoturtle.cpp" line="308"/>
+        <source>&amp;Save</source>
+        <translation>Salvar</translation>
+    </message>
+    <message>
+        <location filename="../klogoturtle.cpp" line="310"/>
+        <source>Save the document to disk</source>
+        <translation>Salvar o documento no disco</translation>
+    </message>
+    <message>
+        <location filename="../klogoturtle.cpp" line="313"/>
         <source>Save &amp;As...</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../klogoturtle.cpp" line="301"/>
-        <source>Save the document under a new name</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../klogoturtle.cpp" line="304"/>
-        <location filename="../klogoturtle.cpp" line="306"/>
-        <source>Print...</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../klogoturtle.cpp" line="309"/>
-        <source>E&amp;xit</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../klogoturtle.cpp" line="311"/>
-        <source>Exit the application</source>
-        <translation></translation>
+        <translation>Salvar &amp;Como...</translation>
     </message>
     <message>
         <location filename="../klogoturtle.cpp" line="315"/>
-        <source>Cu&amp;t</source>
-        <translation></translation>
+        <source>Save the document under a new name</source>
+        <translation>Salvar o documento com um novo nome</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="317"/>
+        <location filename="../klogoturtle.cpp" line="318"/>
+        <location filename="../klogoturtle.cpp" line="320"/>
+        <source>Print...</source>
+        <translation>Imprimindo...</translation>
+    </message>
+    <message>
+        <location filename="../klogoturtle.cpp" line="323"/>
+        <source>E&amp;xit</source>
+        <translation>S&amp;air</translation>
+    </message>
+    <message>
+        <location filename="../klogoturtle.cpp" line="325"/>
+        <source>Exit the application</source>
+        <translation>Sair da aplicação</translation>
+    </message>
+    <message>
+        <location filename="../klogoturtle.cpp" line="329"/>
+        <source>Cu&amp;t</source>
+        <translation>Recorta&amp;r</translation>
+    </message>
+    <message>
+        <location filename="../klogoturtle.cpp" line="331"/>
         <source>Cut the current selection&apos;s contents to the clipboard</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="321"/>
+        <location filename="../klogoturtle.cpp" line="335"/>
         <source>&amp;Copy</source>
-        <translation></translation>
+        <translation>&amp;Copiar</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="323"/>
+        <location filename="../klogoturtle.cpp" line="337"/>
         <source>Copy the current selection&apos;s contents to the clipboard</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="327"/>
+        <location filename="../klogoturtle.cpp" line="341"/>
         <source>&amp;Paste</source>
-        <translation></translation>
+        <translation>&amp;Colar</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="329"/>
+        <location filename="../klogoturtle.cpp" line="343"/>
         <source>Paste the clipboard&apos;s contents into the current selection</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="333"/>
+        <location filename="../klogoturtle.cpp" line="347"/>
         <source>&amp;About</source>
-        <translation></translation>
+        <translation>&amp;Sobre</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="334"/>
+        <location filename="../klogoturtle.cpp" line="348"/>
         <source>Show the application&apos;s About box</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="337"/>
+        <location filename="../klogoturtle.cpp" line="351"/>
         <source>About &amp;Qt</source>
-        <translation></translation>
+        <translation>Sobre o &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="338"/>
+        <location filename="../klogoturtle.cpp" line="352"/>
         <source>Show the Qt library&apos;s About box</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="425"/>
+        <location filename="../klogoturtle.cpp" line="364"/>
+        <source>&amp;Caminho do Script</source>
+        <translation>&amp;Caminho do Script</translation>
+    </message>
+    <message>
+        <location filename="../klogoturtle.cpp" line="365"/>
+        <source>Setar o caminho do script</source>
+        <translation>Setar o caminho do script</translation>
+    </message>
+    <message>
+        <location filename="../klogoturtle.cpp" line="444"/>
         <source>Current Language changed to %1</source>
-        <translation></translation>
+        <translation>Idioma atual alterado para %1</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="431"/>
+        <location filename="../klogoturtle.cpp" line="450"/>
         <source>&amp;File</source>
-        <translation></translation>
+        <translation>&amp;Arquivo</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="442"/>
+        <location filename="../klogoturtle.cpp" line="461"/>
         <source>&amp;Edit</source>
-        <translation></translation>
+        <translation>&amp;Editar</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="447"/>
+        <location filename="../klogoturtle.cpp" line="466"/>
+        <source>&amp;Settings</source>
+        <translation>&amp;Configurações</translation>
+    </message>
+    <message>
+        <location filename="../klogoturtle.cpp" line="469"/>
         <source>&amp;Language</source>
-        <translation>&amp;Língua</translation>
+        <translation>&amp;Idioma</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="452"/>
+        <location filename="../klogoturtle.cpp" line="475"/>
         <source>&amp;Help</source>
-        <translation></translation>
+        <translation>&amp;Ajuda</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="459"/>
+        <location filename="../klogoturtle.cpp" line="482"/>
         <source>File</source>
-        <translation></translation>
+        <translation>Arquivo</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="465"/>
+        <location filename="../klogoturtle.cpp" line="488"/>
         <source>Edit</source>
-        <translation></translation>
+        <translation>Editar</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="473"/>
+        <location filename="../klogoturtle.cpp" line="496"/>
         <source>Ready</source>
-        <translation></translation>
+        <translation>Pronto</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="701"/>
+        <location filename="../klogoturtle.cpp" line="724"/>
         <source>REPEAT with invalid argument</source>
         <translation>REPETE com argumento inválido</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="708"/>
+        <location filename="../klogoturtle.cpp" line="731"/>
         <source>REPEAT without END REPEAT</source>
         <translation>REPETE sem FIM REPETE</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="744"/>
+        <location filename="../klogoturtle.cpp" line="767"/>
         <source>Variable of MAKE is not correct</source>
         <translation>Variável de FACA não é correta</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="756"/>
+        <location filename="../klogoturtle.cpp" line="779"/>
         <source>Argument of MAKE is not number</source>
         <translation>Argumento de FACA não é número</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="763"/>
+        <location filename="../klogoturtle.cpp" line="786"/>
         <source>MAKE without =</source>
         <translation>FACA sem =</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="834"/>
+        <location filename="../klogoturtle.cpp" line="857"/>
         <source>Command variable of TO have length less than 4</source>
         <translation>Variável de comando de DEFINE tem tamanho menor que 4</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="866"/>
+        <location filename="../klogoturtle.cpp" line="889"/>
         <source>TO without END TO</source>
         <translation>DEFINE sem FIM DEFINE</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="886"/>
+        <location filename="../klogoturtle.cpp" line="909"/>
         <source>Command ADD without = or +</source>
         <translation>Comando SOMA sem = ou +</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="904"/>
-        <location filename="../klogoturtle.cpp" line="918"/>
+        <location filename="../klogoturtle.cpp" line="927"/>
+        <location filename="../klogoturtle.cpp" line="941"/>
         <source>Variable of ADD is not number or not defined</source>
         <translation>Variável de SOMA não é número ou não está definida</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="928"/>
+        <location filename="../klogoturtle.cpp" line="951"/>
         <source>Variable of ADD is number</source>
         <translation>Variável de SOMA é um número</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="947"/>
+        <location filename="../klogoturtle.cpp" line="970"/>
         <source>Command SUB without = or -</source>
         <translation>Comando SUBTRAI sem = ou -</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="965"/>
-        <location filename="../klogoturtle.cpp" line="979"/>
+        <location filename="../klogoturtle.cpp" line="988"/>
+        <location filename="../klogoturtle.cpp" line="1002"/>
         <source>Variable of SUB is not number or not defined</source>
         <translation>Variável de SUBTRAI não é número ou não está definida</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="989"/>
+        <location filename="../klogoturtle.cpp" line="1012"/>
         <source>Variable of SUB is number</source>
         <translation>Variável de SUBTRAI é um número</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1009"/>
+        <location filename="../klogoturtle.cpp" line="1032"/>
         <source>Command MUL without = or *</source>
         <translation>Comando MULTIPLICA sem = ou *</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1027"/>
-        <location filename="../klogoturtle.cpp" line="1041"/>
+        <location filename="../klogoturtle.cpp" line="1050"/>
+        <location filename="../klogoturtle.cpp" line="1064"/>
         <source>Variable of MUL is not number or not defined</source>
         <translation>Variável de MULTIPLICA não é número ou não está definida</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1051"/>
+        <location filename="../klogoturtle.cpp" line="1074"/>
         <source>Variable of MUL is number</source>
         <translation>Variável de MULTIPLICA é um número</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1071"/>
+        <location filename="../klogoturtle.cpp" line="1094"/>
         <source>Command DIV without = or /</source>
         <translation>Comando DIVIDE sem = ou /</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1089"/>
-        <location filename="../klogoturtle.cpp" line="1108"/>
+        <location filename="../klogoturtle.cpp" line="1112"/>
+        <location filename="../klogoturtle.cpp" line="1131"/>
         <source>Variable of DIV is not number or not defined</source>
         <translation>Variável de DIVIDE não é número ou não está definida</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1096"/>
+        <location filename="../klogoturtle.cpp" line="1119"/>
         <source>Variable of DIV is zero</source>
         <translation>Variável de DIVIDE é zero</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1118"/>
+        <location filename="../klogoturtle.cpp" line="1141"/>
         <source>Variable of DIV is number</source>
         <translation>Variável de DIVIDE é um número</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1139"/>
+        <location filename="../klogoturtle.cpp" line="1162"/>
         <source>Command REM without = or /</source>
         <translation>Comando RESTO sem = ou /</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1157"/>
-        <location filename="../klogoturtle.cpp" line="1176"/>
+        <location filename="../klogoturtle.cpp" line="1180"/>
+        <location filename="../klogoturtle.cpp" line="1199"/>
         <source>Variable of REM is not number or not defined</source>
         <translation>Variável de RESTO não é número ou não está definida</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1164"/>
+        <location filename="../klogoturtle.cpp" line="1187"/>
         <source>Variable of REM is zero</source>
         <translation>Variável de RESTO é zero</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1186"/>
+        <location filename="../klogoturtle.cpp" line="1209"/>
         <source>Variable of REM is number</source>
         <translation>Variável de RESTO é número</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1245"/>
-        <location filename="../klogoturtle.cpp" line="1259"/>
-        <location filename="../klogoturtle.cpp" line="1290"/>
-        <location filename="../klogoturtle.cpp" line="1304"/>
-        <location filename="../klogoturtle.cpp" line="1336"/>
-        <location filename="../klogoturtle.cpp" line="1350"/>
-        <location filename="../klogoturtle.cpp" line="1381"/>
-        <location filename="../klogoturtle.cpp" line="1395"/>
+        <location filename="../klogoturtle.cpp" line="1268"/>
+        <location filename="../klogoturtle.cpp" line="1282"/>
+        <location filename="../klogoturtle.cpp" line="1313"/>
+        <location filename="../klogoturtle.cpp" line="1327"/>
+        <location filename="../klogoturtle.cpp" line="1359"/>
+        <location filename="../klogoturtle.cpp" line="1373"/>
+        <location filename="../klogoturtle.cpp" line="1404"/>
+        <location filename="../klogoturtle.cpp" line="1418"/>
         <source>Variable of IF is not number or not defined</source>
         <translation>Variável de SE não é número ou não está definida</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1413"/>
+        <location filename="../klogoturtle.cpp" line="1436"/>
         <source>IF without operand</source>
         <translation>SE sem operando</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1425"/>
+        <location filename="../klogoturtle.cpp" line="1448"/>
         <source>IF without END IF</source>
         <translation>SE sem FIM SE</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1461"/>
+        <location filename="../klogoturtle.cpp" line="1484"/>
         <source>FD with invalid argument</source>
         <translation>FRENTE com argumento inválido</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1486"/>
+        <location filename="../klogoturtle.cpp" line="1509"/>
         <source>BK with invalid argument</source>
         <translation>ATRAS com argumento inválido</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1511"/>
+        <location filename="../klogoturtle.cpp" line="1534"/>
         <source>LT with invalid argument</source>
         <translation>ESQUERDA com argumento inválido</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1536"/>
+        <location filename="../klogoturtle.cpp" line="1559"/>
         <source>RT with invalid argument</source>
         <translation>DIREITA com argumento inválido</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1561"/>
+        <location filename="../klogoturtle.cpp" line="1584"/>
         <source>SX with invalid argument</source>
         <translation>X com argumento inválido</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1586"/>
+        <location filename="../klogoturtle.cpp" line="1609"/>
         <source>SY with invalid argument</source>
         <translation>Y com argumento inválido</translation>
     </message>
     <message>
-        <location filename="../klogoturtle.cpp" line="1671"/>
+        <location filename="../klogoturtle.cpp" line="1694"/>
         <source>Invalid command:</source>
         <translation>Comando inválido:</translation>
     </message>

@@ -116,7 +116,7 @@ void KlogoTurtleApp::initView()
     MensagemTextEdit->setReadOnly(true);
 
     runButton  = new QPushButton(this);
-    runButton->setText("&Run");
+    runButton->setText("Run");
     runButton->setGeometry(710,410,80,30);
 
     saidaComboBox = new QComboBox(this);
@@ -219,7 +219,7 @@ bool KlogoTurtleApp::saveAs()
 void KlogoTurtleApp::about()
 {
    QMessageBox::about(this, tr("KLogo-Turtle 0.7"),
-            tr("2003, Ecluides Lourenco Chum \n 2015, Marcus Vinicius Corrêa Barcelos \n https://github.com/xmarcusv/klogo-turtle-mobile"));
+            tr("2003, Ecluides Lourenco Chum \n2015, Marcus Vinicius Corrêa Barcelos e Danilo Rodrigues César \nhttps://github.com/xmarcusv/klogo-turtle-mobile"));
 }
 
 bool KlogoTurtleApp::maybeSave()
@@ -372,10 +372,6 @@ void KlogoTurtleApp::createLanguageMenu(void)
     langGroup->setExclusive(true);
 
     connect(langGroup, SIGNAL (triggered(QAction *)), this, SLOT (slotLanguageChanged(QAction *)));
-
-    // format systems language
-    //QString defaultLocale = QLocale::system().name(); // e.g. "de_DE"
-    //defaultLocale.truncate(defaultLocale.lastIndexOf('_')); // e.g. "de"
 
     QDir dir(":/languages");
     QStringList fileNames = dir.entryList(QStringList("klogoturtle_*.qm"));
@@ -805,8 +801,8 @@ int KlogoTurtleApp::Exe_comando(int pos_comando, QStringList lines){
                             prox_comando = pos_comando + 1;
                             tamanho = comando.length();
                             parametro_s = (comando.mid(4,tamanho));
-                            //MensagemTextEdit->append(tr(des->show_var(parametro_s)));
-                            MensagemTextEdit->append(des->show_var(parametro_s));
+                            MensagemTextEdit->append(tr("").arg(des->show_var(parametro_s)));
+                            //MensagemTextEdit->append(des->show_var(parametro_s));
                             existe_comando = 1;
                         }
                         else
