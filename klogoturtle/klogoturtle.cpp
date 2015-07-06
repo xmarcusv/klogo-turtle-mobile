@@ -1843,6 +1843,7 @@ void KlogoTurtleApp::callScript(QString comando, int dist){
         QProcess* proc = new QProcess();
         proc->start(script, QStringList() << comando << QString::number(dist));
         proc->waitForFinished();
+
         QString resp(proc->readAllStandardOutput());
         MensagemTextEdit->append(resp);
     }

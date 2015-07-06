@@ -497,7 +497,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents ../klogoturtle/klogoturtle.h ../klogoturtle/desenho.h ../klogoturtle/klogoturtlemobileapp.h ../klogoturtle/mesamobile.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../klogoturtle/main.cpp ../klogoturtle/klogoturtle.cpp ../klogoturtle/desenho.cpp ../klogoturtle/klogoturtlemobileapp.cpp ../klogoturtle/mesamobile.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../klogoturtle/klogoturtle.ui ../klogoturtle/klogoturtlemobileapp.ui ../klogoturtle/mesamobile.ui $(DISTDIR)/
-	$(COPY_FILE) --parents languages/klogoturtle_pt_BR.ts languages/klogoturtle_fs.ts $(DISTDIR)/
+	$(COPY_FILE) --parents languages/klogoturtle_pt_BR.ts languages/klogoturtle_fr.ts languages/klogoturtle_it.ts languages/klogoturtle_de.ts $(DISTDIR)/
 
 
 clean:compiler_clean 
@@ -533,7 +533,9 @@ qrc_klogoturtle.cpp: ../klogoturtle/klogoturtle.qrc \
 
 qrc_languages.cpp: ../klogoturtle/languages.qrc \
 		../klogoturtle/languages/klogoturtle_pt_BR.qm \
-		../klogoturtle/languages/klogoturtle_fs.qm
+		../klogoturtle/languages/klogoturtle_fr.qm \
+		../klogoturtle/languages/klogoturtle_de.qm \
+		../klogoturtle/languages/klogoturtle_it.qm
 	/home/marcus/Qt/5.4/gcc_64/bin/rcc -name languages ../klogoturtle/languages.qrc -o qrc_languages.cpp
 
 compiler_moc_header_make_all: moc_klogoturtle.cpp moc_desenho.cpp moc_klogoturtlemobileapp.cpp moc_mesamobile.cpp
@@ -1373,6 +1375,21 @@ klogoturtle.o: ../klogoturtle/klogoturtle.cpp ../klogoturtle/klogoturtle.h \
 		../klogoturtle/desenho.h \
 		../../../Qt/5.4/gcc_64/include/QtGui/qpainter.h \
 		ui_klogoturtle.h \
+		../../../Qt/5.4/gcc_64/include/QtCore/QVariant \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/5.4/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/5.4/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.4/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt/5.4/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/5.4/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QWidget \
 		../../../Qt/5.4/gcc_64/include/QtWidgets/QMessageBox \
 		../../../Qt/5.4/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Qt/5.4/gcc_64/include/QtWidgets/qdialog.h \
@@ -1399,7 +1416,14 @@ klogoturtle.o: ../klogoturtle/klogoturtle.cpp ../klogoturtle/klogoturtle.h \
 		../../../Qt/5.4/gcc_64/include/QtWidgets/qstatusbar.h \
 		../../../Qt/5.4/gcc_64/include/QtWidgets/QMenuBar \
 		../../../Qt/5.4/gcc_64/include/QtWidgets/qmenubar.h \
-		../../../Qt/5.4/gcc_64/include/QtWidgets/qmenu.h
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
+		../../../Qt/5.4/gcc_64/include/QtCore/QProcess \
+		../../../Qt/5.4/gcc_64/include/QtCore/qprocess.h \
+		../../../Qt/5.4/gcc_64/include/QtCore/QSettings \
+		../../../Qt/5.4/gcc_64/include/QtCore/qsettings.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QInputDialog \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qinputdialog.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qlineedit.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o klogoturtle.o ../klogoturtle/klogoturtle.cpp
 
 desenho.o: ../klogoturtle/desenho.cpp ../klogoturtle/desenho.h \
@@ -1660,7 +1684,26 @@ klogoturtlemobileapp.o: ../klogoturtle/klogoturtlemobileapp.cpp ../../../Qt/5.4/
 		../../../Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
 		../../../Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
 		../../../Qt/5.4/gcc_64/include/QtCore/qabstractitemmodel.h \
-		ui_klogoturtlemobileapp.h
+		ui_klogoturtlemobileapp.h \
+		../../../Qt/5.4/gcc_64/include/QtCore/QVariant \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QAction \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/5.4/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QMenuBar \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qmenubar.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QStatusBar \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o klogoturtlemobileapp.o ../klogoturtle/klogoturtlemobileapp.cpp
 
 mesamobile.o: ../klogoturtle/mesamobile.cpp ../../../Qt/5.4/gcc_64/include/QtCore/qmath.h \
@@ -1799,7 +1842,37 @@ mesamobile.o: ../klogoturtle/mesamobile.cpp ../../../Qt/5.4/gcc_64/include/QtCor
 		../../../Qt/5.4/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../klogoturtle/desenho.h \
 		../../../Qt/5.4/gcc_64/include/QtGui/qpainter.h \
-		ui_mesamobile.h
+		ui_mesamobile.h \
+		../../../Qt/5.4/gcc_64/include/QtCore/QVariant \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QAction \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/5.4/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/5.4/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/5.4/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/5.4/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QMenuBar \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qmenubar.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QStatusBar \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../../Qt/5.4/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mesamobile.o ../klogoturtle/mesamobile.cpp
 
 qrc_klogoturtle.o: qrc_klogoturtle.cpp 
