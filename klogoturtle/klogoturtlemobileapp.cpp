@@ -25,6 +25,8 @@ KlogoTurtleMobileApp::KlogoTurtleMobileApp(QWidget *parent) :
 
     ui->setupUi(this);
 
+    mesa = new MesaMobile();
+
     ///////////////////////////////////////////////////////////////////
     // call inits to invoke all other construction parts
     initView();
@@ -66,8 +68,7 @@ void KlogoTurtleMobileApp::initView()
 }
 
 void KlogoTurtleMobileApp::slotRun()
-{
-    mesa = new MesaMobile();
+{    
     mesa->plainTextEditContents = ComandoTextEdit->toPlainText();
     mesa->show();
 }

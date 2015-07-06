@@ -27,11 +27,14 @@ KlogoTurtleApp::KlogoTurtleApp(QWidget *parent) :
     ui(new Ui::KlogoTurtleApp)
 {
 
-    qApp->installTranslator(&m_translator);
-    qApp->installTranslator(&m_translatorQt);
-    ui->setupUi(this);
-
     readSettings();
+
+    if(m_translator.load(QString("klogoturtle_%1.qm").arg(idioma_escolhido), ":/languages")){
+        qApp->installTranslator(&m_translator);
+        qApp->installTranslator(&m_translatorQt);
+     }
+
+    ui->setupUi(this);
 
     ///////////////////////////////////////////////////////////////////
     // call inits to invoke all other construction parts
@@ -415,7 +418,7 @@ void switchTranslator(QTranslator& translator, const QString& filename)
     qApp->removeTranslator(&translator);
 
     // load the new translator
-    if(translator.load(filename, ":/languages/languages"))
+    if(translator.load(filename, ":/languages"))
         qApp->installTranslator(&translator);
 }
 
