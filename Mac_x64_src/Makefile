@@ -779,7 +779,9 @@ klogoturtle.o: ../klogoturtle/klogoturtle.cpp ../klogoturtle/klogoturtle.h \
 		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QProcess \
 		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qprocess.h \
 		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QSettings \
-		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qsettings.h
+		../../../Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qsettings.h \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QInputDialog \
+		../../../Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qinputdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o klogoturtle.o ../klogoturtle/klogoturtle.cpp
 
 desenho.o: ../klogoturtle/desenho.cpp ../klogoturtle/desenho.h \
