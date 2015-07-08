@@ -1,0 +1,4 @@
+?package(klogoturtle):needs="x11" \
+	section="Applications/Educational" \
+	title="Klogo-Turtle" \
+	command="/usr/bin/klogoturtle"

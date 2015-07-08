@@ -1,0 +1,3 @@
+bin/klogoturtle usr/bin
+klogoturtle.desktop usr/share/applications
+src/images/klogoturtle.png usr/share/pixmaps

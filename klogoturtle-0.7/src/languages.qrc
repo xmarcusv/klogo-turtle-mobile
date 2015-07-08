@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>languages/klogoturtle_pt_BR.qm</file>
+        <file>languages/klogoturtle_de.qm</file>
+        <file>languages/klogoturtle_fr.qm</file>
+        <file>languages/klogoturtle_it.qm</file>
+    </qresource>
+</RCC>

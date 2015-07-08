@@ -1,0 +1,22 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=KLogo-Turtle
+Name[nl]=KLogo-Schildpad
+Name[sv]=Klogo-turtle
+Name[wa]=Tortowe-KLogo
+Name[xx]=xxKLogo-Turtlexx
+Exec=/usr/bin/Editor/klogoturtle %F
+Icon=/usr/share/pixmaps/klogoturtle.png
+MiniIcon=klogoturtle
+Type=Application
+Comment=A KDE KPart Application
+Comment[ca]=Una aplicació KPart per a KDE
+Comment[es]=Una aplicación de KPart de KDE.
+Comment[nl]=een KDE KPart-applicaite
+Comment[pt]=Uma aplicação KPart do KDE
+Comment[pt_BR]=Uma aplicação Componente do KDE
+Comment[sv]=Delprogram för KDE (Kpart)
+Comment[wa]=On programe KDE KPart
+Comment[xx]=xxA KDE KPart Applicationxx
+Terminal=0
+Version=0.7
