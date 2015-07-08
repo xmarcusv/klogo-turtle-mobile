@@ -58,6 +58,8 @@ protected:
     void initView();
     void run();
     void showEvent(QShowEvent *event);
+    void addMessage(QString str);
+    void showMessage();
 
 public slots:
     void slotVoltar();
@@ -79,7 +81,7 @@ private:
     QString temp_comando_to;
     QString guarda_to [10] [2];
     Desenho *des;
-    QString i18n(QString str);
+    QString messages;
     int tem_erro;
 };
 

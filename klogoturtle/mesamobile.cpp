@@ -1,6 +1,7 @@
 #include <QtCore/qmath.h>
 #include <QtGui/QGuiApplication>
 #include <QtGui/QScreen>
+#include <QMessageBox>
 
 #include "mesamobile.h"
 #include "ui_mesamobile.h"
@@ -91,6 +92,8 @@ void MesaMobile::run(){
     }
 
     if(tem_erro == 0) des->tartaruga(tem_erro);
+
+    showMessage();
 }
 
 int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
@@ -318,14 +321,14 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                     }
                     else
                     {
-                        mensagemText.append(i18n("REPEAT with invalid argument"));
+                        addMessage(tr("REPEAT with invalid argument"));
                         stop_error();
                     }
                 }
             }
             else
             {
-                mensagemText.append(i18n("REPEAT without END REPEAT"));
+                addMessage(tr("REPEAT without END REPEAT"));
                 stop_error();
             }
 
@@ -361,7 +364,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                         temp_make2 = var_nome.toInt(&ok_make_temp2,10);
                         if(ok_make_temp2)
                         {
-                            mensagemText.append(i18n("Variable of MAKE is not correct"));
+                            addMessage(tr("Variable of MAKE is not correct"));
                             stop_error();
                         }
                         else
@@ -373,14 +376,14 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                             }
                             else
                             {
-                                mensagemText.append(i18n("Argument of MAKE is not number"));
+                                addMessage(tr("Argument of MAKE is not number"));
                                 stop_error();
                             }
                         }
                     }
                     else
                     {
-                        mensagemText.append(i18n("MAKE without ="));
+                        addMessage(tr("MAKE without ="));
                         stop_error();
                     }
                 }
@@ -402,7 +405,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                             prox_comando = pos_comando + 1;
                             tamanho = comando.length();
                             parametro_s = (comando.mid(4,tamanho));
-                            mensagemText.append(i18n(des->show_var(parametro_s)));
+                            addMessage(tr("").arg(des->show_var(parametro_s)));
                             existe_comando = 1;
                         }
                         else
@@ -450,7 +453,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                         {
                                             if((comando.section(':',jj,jj)).length() < 4)
                                             {
-                                                mensagemText.append(i18n("Command variable of TO have length less than 4"));
+                                                addMessage(tr("Command variable of TO have length less than 4"));
                                                 stop_error();
                                                 break;
                                             }
@@ -482,7 +485,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                 }
                                 else
                                 {
-                                    mensagemText.append(i18n("TO without END TO"));
+                                    addMessage(tr("TO without END TO"));
                                     stop_error();
                                 }
 
@@ -502,7 +505,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                         int pos_sign = comando.indexOf('+',0);
                                         if(pos_ident == -1 || pos_sign == -1)
                                         {
-                                            mensagemText.append(i18n("Command ADD without = or +"));
+                                            addMessage(tr("Command ADD without = or +"));
                                             stop_error();
                                         }
                                         else
@@ -520,7 +523,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param2 = param2_temp.toInt(&ok_param2_temp, 10);
                                                 if(ok_param2_temp != true)
                                                 {
-                                                    mensagemText.append(i18n("Variable of ADD is not number or not defined"));
+                                                    addMessage(tr("Variable of ADD is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -534,7 +537,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param1 = param1_temp.toInt(&ok_param1_temp, 10);
                                                 if(ok_param1_temp != true)
                                                 {
-                                                    mensagemText.append(i18n("Variable of ADD is not number or not defined"));
+                                                    addMessage(tr("Variable of ADD is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -544,7 +547,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                             recebe_ok_temp = 0;
                                             if(ok_recebe == true)
                                             {
-                                                mensagemText.append(i18n("Variable of ADD is number"));
+                                                addMessage(tr("Variable of ADD is number"));
                                                 stop_error();
                                             }
                                             else
@@ -563,7 +566,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                         int pos_sign = comando.indexOf('-',0);
                                         if(pos_ident == -1 || pos_sign == -1)
                                         {
-                                            mensagemText.append(i18n("Command SUB without = or -"));
+                                            addMessage(tr("Command SUB without = or -"));
                                             stop_error();
                                         }
                                         else
@@ -581,7 +584,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param2 = param2_temp.toInt(&ok_param2_temp, 10);
                                                 if(ok_param2_temp != true)
                                                 {
-                                                    mensagemText.append(i18n("Variable of SUB is not number or not defined"));
+                                                    addMessage(tr("Variable of SUB is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -595,7 +598,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param1 = param1_temp.toInt(&ok_param1_temp, 10);
                                                 if(ok_param1_temp != true)
                                                 {
-                                                    mensagemText.append(i18n("Variable of SUB is not number or not defined"));
+                                                    addMessage(tr("Variable of SUB is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -605,7 +608,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                             recebe_ok_temp = 0;
                                             if(ok_recebe == true)
                                             {
-                                                mensagemText.append(i18n("Variable of SUB is number"));
+                                                addMessage(tr("Variable of SUB is number"));
                                                 stop_error();
                                             }
                                             else
@@ -625,7 +628,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                         int pos_sign = comando.indexOf('*',0);
                                         if(pos_ident == -1 || pos_sign == -1)
                                         {
-                                            mensagemText.append(i18n("Command MUL without = or *"));
+                                            addMessage(tr("Command MUL without = or *"));
                                             stop_error();
                                         }
                                         else
@@ -643,7 +646,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param2 = param2_temp.toInt(&ok_param2_temp, 10);
                                                 if(ok_param2_temp != true)
                                                 {
-                                                    mensagemText.append(i18n("Variable of MUL is not number or not defined"));
+                                                    addMessage(tr("Variable of MUL is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -657,7 +660,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param1 = param1_temp.toInt(&ok_param1_temp, 10);
                                                 if(ok_param1_temp != true)
                                                 {
-                                                    mensagemText.append(i18n("Variable of MUL is not number or not defined"));
+                                                    addMessage(tr("Variable of MUL is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -667,7 +670,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                             recebe_ok_temp = 0;
                                             if(ok_recebe == true)
                                             {
-                                                mensagemText.append(i18n("Variable of MUL is number"));
+                                                addMessage(tr("Variable of MUL is number"));
                                                 stop_error();
                                             }
                                             else
@@ -687,7 +690,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                         int pos_sign = comando.indexOf('/',0);
                                         if(pos_ident == -1 || pos_sign == -1)
                                         {
-                                            mensagemText.append(i18n("Command DIV without = or /"));
+                                            addMessage(tr("Command DIV without = or /"));
                                             stop_error();
                                         }
                                         else
@@ -705,14 +708,14 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param2 = param2_temp.toInt(&ok_param2_temp, 10);
                                                 if(ok_param2_temp != true)
                                                 {
-                                                    mensagemText.append(i18n("Variable of DIV is not number or not defined"));
+                                                    addMessage(tr("Variable of DIV is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
 
                                             if (i_param2 <= 0)
                                             {
-                                                mensagemText.append(i18n("Variable of DIV is zero"));
+                                                addMessage(tr("Variable of DIV is zero"));
                                                 stop_error();
                                             }
                                             bool ok_param1;
@@ -724,7 +727,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param1 = param1_temp.toInt(&ok_param1_temp, 10);
                                                 if(ok_param1_temp != true)
                                                 {
-                                                    mensagemText.append(i18n("Variable of DIV is not number or not defined"));
+                                                    addMessage(tr("Variable of DIV is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -734,7 +737,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                             recebe_ok_temp = 0;
                                             if(ok_recebe == true)
                                             {
-                                                mensagemText.append(i18n("Variable of DIV is number"));
+                                                addMessage(tr("Variable of DIV is number"));
                                                 stop_error();
                                             }
                                             else
@@ -755,7 +758,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                         int pos_sign = comando.indexOf('/',0);
                                         if(pos_ident == -1 || pos_sign == -1)
                                         {
-                                            mensagemText.append(i18n("Command REM without = or /"));
+                                            addMessage(tr("Command REM without = or /"));
                                             stop_error();
                                         }
                                         else
@@ -773,14 +776,14 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param2 = param2_temp.toInt(&ok_param2_temp, 10);
                                                 if(ok_param2_temp != true)
                                                 {
-                                                    mensagemText.append(i18n("Variable of REM is not number or not defined"));
+                                                    addMessage(tr("Variable of REM is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
 
                                             if (i_param2 <= 0)
                                             {
-                                                mensagemText.append(i18n("Variable of REM is zero"));
+                                                addMessage(tr("Variable of REM is zero"));
                                                 stop_error();
                                             }
                                             bool ok_param1;
@@ -792,7 +795,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 i_param1 = param1_temp.toInt(&ok_param1_temp, 10);
                                                 if(ok_param1_temp != true)
                                                 {
-                                                    mensagemText.append(i18n("Variable of REM is not number or not defined"));
+                                                    addMessage(tr("Variable of REM is not number or not defined"));
                                                     stop_error();
                                                 }
                                             }
@@ -802,7 +805,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                             recebe_ok_temp = 0;
                                             if(ok_recebe == true)
                                             {
-                                                mensagemText.append(i18n("Variable of REM is number"));
+                                                addMessage(tr("Variable of REM is number"));
                                                 stop_error();
                                             }
                                             else
@@ -861,7 +864,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                     i_if_param1 = param1_if_temp.toInt(&ok_param1_if_temp, 10);
                                                     if(ok_param1_if_temp != true)
                                                     {
-                                                        mensagemText.append(i18n("Variable of IF is not number or not defined"));
+                                                        addMessage(tr("Variable of IF is not number or not defined"));
                                                         stop_error();
                                                     }
                                                 }
@@ -875,7 +878,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                     i_if_param2 = param2_if_temp.toInt(&ok_param2_if_temp, 10);
                                                     if(ok_param2_if_temp != true)
                                                     {
-                                                        mensagemText.append(i18n("Variable of IF is not number or not defined"));
+                                                        addMessage(tr("Variable of IF is not number or not defined"));
                                                         stop_error();
                                                     }
                                                 }
@@ -906,7 +909,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                         i_if_param1 = param1_if_temp.toInt(&ok_param1_if_temp, 10);
                                                         if(ok_param1_if_temp != true)
                                                         {
-                                                            mensagemText.append(i18n("Variable of IF is not number or not defined"));
+                                                            addMessage(tr("Variable of IF is not number or not defined"));
                                                             stop_error();
                                                         }
                                                     }
@@ -920,7 +923,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                         i_if_param2 = param2_if_temp.toInt(&ok_param2_if_temp, 10);
                                                         if(ok_param2_if_temp != true)
                                                         {
-                                                            mensagemText.append(i18n("Variable of IF is not number or not defined"));
+                                                            addMessage(tr("Variable of IF is not number or not defined"));
                                                             stop_error();
                                                         }
                                                     }
@@ -952,7 +955,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                             i_if_param1 = param1_if_temp.toInt(&ok_param1_if_temp, 10);
                                                             if(ok_param1_if_temp != true)
                                                             {
-                                                                mensagemText.append(i18n("Variable of IF is not number or not defined"));
+                                                                addMessage(tr("Variable of IF is not number or not defined"));
                                                                 stop_error();
                                                             }
                                                         }
@@ -966,7 +969,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                             i_if_param2 = param2_if_temp.toInt(&ok_param2_if_temp, 10);
                                                             if(ok_param2_if_temp != true)
                                                             {
-                                                                mensagemText.append(i18n("Variable of IF is not number or not defined"));
+                                                                addMessage(tr("Variable of IF is not number or not defined"));
                                                                 stop_error();
                                                             }
                                                         }
@@ -997,7 +1000,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                                 i_if_param1 = param1_if_temp.toInt(&ok_param1_if_temp, 10);
                                                                 if(ok_param1_if_temp != true)
                                                                 {
-                                                                    mensagemText.append(i18n("Variable of IF is not number or not defined"));
+                                                                    addMessage(tr("Variable of IF is not number or not defined"));
                                                                     stop_error();
                                                                 }
                                                             }
@@ -1011,7 +1014,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                                 i_if_param2 = param2_if_temp.toInt(&ok_param2_if_temp, 10);
                                                                 if(ok_param2_if_temp != true)
                                                                 {
-                                                                    mensagemText.append(i18n("Variable of IF is not number or not defined"));
+                                                                    addMessage(tr("Variable of IF is not number or not defined"));
                                                                     stop_error();
                                                                 }
                                                             }
@@ -1029,7 +1032,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                         {
                                                             if(comando.startsWith("ENDIF") != true)
                                                             {
-                                                                mensagemText.append(i18n("IF without operand"));
+                                                                addMessage(tr("IF without operand"));
                                                                 stop_error();
                                                             }
                                                         }
@@ -1041,7 +1044,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                         }
                                         else
                                         {
-                                            mensagemText.append(i18n("IF without END IF"));
+                                            addMessage(tr("IF without END IF"));
                                             stop_error();
                                         }
 
@@ -1075,7 +1078,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 }
                                                 else
                                                 {
-                                                    mensagemText.append(i18n("FD with invalid argument"));
+                                                    addMessage(tr("FD with invalid argument"));
                                                     stop_error();
                                                 }
                                             }
@@ -1098,7 +1101,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 }
                                                 else
                                                 {
-                                                    mensagemText.append(i18n("BK with invalid argument"));
+                                                    addMessage(tr("BK with invalid argument"));
                                                     stop_error();
                                                 }
                                             }
@@ -1121,7 +1124,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 }
                                                 else
                                                 {
-                                                    mensagemText.append(i18n("LT with invalid argument"));
+                                                    addMessage(tr("LT with invalid argument"));
                                                     stop_error();
                                                 }
                                             }
@@ -1144,7 +1147,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 }
                                                 else
                                                 {
-                                                    mensagemText.append(i18n("RT with invalid argument"));
+                                                    addMessage(tr("RT with invalid argument"));
                                                     stop_error();
                                                 }
                                             }
@@ -1167,7 +1170,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 }
                                                 else
                                                 {
-                                                    mensagemText.append(i18n("SX with invalid argument"));
+                                                    addMessage(tr("SX with invalid argument"));
                                                     stop_error();
                                                 }
                                             }
@@ -1190,7 +1193,7 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
                                                 }
                                                 else
                                                 {
-                                                    mensagemText.append(i18n("SY with invalid argument"));
+                                                    addMessage(tr("SY with invalid argument"));
                                                     stop_error();
                                                 }
                                             }
@@ -1275,8 +1278,8 @@ int MesaMobile::Exe_comando(int pos_comando, QStringList lines){
             }
             else
             {
-                mensagemText.append(i18n("Invalid command:"));
-                mensagemText.append(comando);
+                addMessage(tr("Invalid command:"));
+                addMessage(comando);
                 tem_erro = 1;
                 stop_error();
                 return ((lines.count())+1);
@@ -1411,7 +1414,19 @@ void MesaMobile::setApplicationWidth(const int newWidth)
     }
 }
 
-QString MesaMobile::i18n(QString str){
-    return str;
+void MesaMobile::addMessage(QString str)
+{
+    messages.append(str);
 }
+void MesaMobile::showMessage()
+{
+   if(!messages.isEmpty())
+    {
+        QMessageBox msgBox;
+        msgBox.setText(messages);
+        msgBox.setDefaultButton(QMessageBox::Ok);
+        msgBox.exec();
+        messages = "";
+    }
 
+}
